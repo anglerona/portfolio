@@ -6,11 +6,9 @@ import { StarsBackground } from "@/components/ui/stars-background"
 const Design = () => {
     return (
         <div className="relative">
-            {/* Backgrounds */}
-            <StarsBackground className="absolute inset-0 z-[-1]" />
-            <ShootingStars className="absolute inset-0 z-[-2]" />
+           <StarsBackground className="fixed top-0 left-0 w-full h-full z-[-1]" />
+           <ShootingStars className="fixed top-0 left-0 w-full h-full z-[-2]" />
 
-            {/* Main Content */}
             <div className="relative z-10">
                 <Navbar pageType="design" />
                 <div className="h-28"></div>

@@ -8,6 +8,7 @@ import Button from "@/components/Button";
 import { StarOrbit } from "@/components/StarOrbit";
 import FadeInSection from "@/components/FadeInSection";
 import { StarsBackground } from "@/components/ui/stars-background";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 
 export default function Home() {
   return (
