@@ -85,8 +85,8 @@ export default function Home() {
               <Image className="rounded-full mx-auto object-fit" src="/goose.png" alt="goose" width={128} height={128} />
             
               <div className="px-4 py-8">
-                <h2 className="font-semibold pb-4 text-4xl">Hi, I'm Angelina</h2>
-                <p>I'm a software engineering student @ uWaterloo and I also do freelance design/illustration work. Thanks for stopping by!</p>
+                <h2 className="font-semibold pb-4 text-4xl">Hi, I&apos;m Angelina</h2>
+                <p>I&apos;m a software engineering student @ uWaterloo and I also do freelance design/illustration work. Thanks for stopping by!</p>
               </div>
               
             </div>

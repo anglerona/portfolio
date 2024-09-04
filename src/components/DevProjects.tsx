@@ -6,7 +6,7 @@ const projects = [
     {
         imageHref: "/portfolio.png",
         title: "Portfolio Website",
-        desc: "The site that you're seeing right now! This site contains both my fullstack developer and design/illustration portfolios.",
+        desc: "The site that you are seeing right now! This site contains both my fullstack developer and design/illustration portfolios.",
         code: "https://github.com/anglerona",
         hasLiveSite: true,
         link: "https://github.com/anglerona",
