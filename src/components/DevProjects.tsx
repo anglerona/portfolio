@@ -7,9 +7,9 @@ const projects = [
         imageHref: "/portfolio.png",
         title: "Portfolio Website",
         desc: "The site that you are seeing right now! This site contains both my fullstack developer and design/illustration portfolios.",
-        code: "https://github.com/anglerona",
+        code: "https://github.com/anglerona/portfolio",
         hasLiveSite: true,
-        link: "https://github.com/anglerona",
+        link: "https://anglerona.vercel.app/",
         tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS", "Framer Motion", "AceternityUI"]
     },
     {
