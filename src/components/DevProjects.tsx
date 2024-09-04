@@ -10,7 +10,7 @@ const projects = [
         code: "https://github.com/anglerona/portfolio",
         hasLiveSite: true,
         link: "https://anglerona.vercel.app/",
-        tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS", "Framer Motion", "AceternityUI"]
+        tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS", "Framer Motion"]
     },
     {
         imageHref: "/goose.png",
@@ -28,7 +28,7 @@ const projects = [
         code: "https://github.com/anglerona/fabricate",
         hasLiveSite: true,
         link: "https://fabricate-chi.vercel.app/",
-        tools: ["TypeScript", "ReactJS", "NextJS", "MongoDB", "TailwindCSS", "OpenAI", "Replicate", "Clerk", "ShadcnUI"]
+        tools: ["TypeScript", "ReactJS", "NextJS", "MongoDB", "TailwindCSS", "OpenAI", "Replicate", "Clerk"]
     },
     {
         imageHref: "/goose.png",

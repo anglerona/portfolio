@@ -24,7 +24,7 @@ const Card = ({
   badges,
 }: CardProps) => {
   return (
-    <div className="w-full bg-background max-w-96 md:max-w-72 border rounded-xl border-purple-300 transition-shadow duration-500 shadow-[0_0_6px_1px_rgba(212,159,255,1)]">
+    <div className="w-full bg-background max-w-80 md:max-w-72 border rounded-xl border-purple-300 transition-shadow duration-500 shadow-[0_0_6px_1px_rgba(212,159,255,1)]">
       <div className="w-full h-40 overflow-hidden rounded-xl">
         <Image
           src={imageHref}
