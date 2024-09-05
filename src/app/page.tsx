@@ -12,7 +12,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 
 export default function Home() {
   return (
-    <div className="bg-background h-screen relative overflow-clip">
+    <div className="bg-background inset-0 relative overflow-clip">
       {/* <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]"> */}
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `url(${grain.src})`
@@ -92,7 +92,7 @@ export default function Home() {
               
             </div>
             
-            <div className="flex items-center justify-center">
+            <div className="flex items-center align-middle justify-center">
               <div className="flex flex-col md:flex-row gap-4 w-full px-4 md:w-auto md:px-0 md:gap-8">
                 <Button href="/dev">Developer Portfolio</Button>
                 <Button href="/design">Design Portfolio</Button>
