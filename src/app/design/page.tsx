@@ -6,40 +6,40 @@ import { StarsBackground } from "@/components/ui/stars-background"
 
 const projects = [
     {
-      name: "Project One",
+      name: "Portfolio",
       description: "A brief description of project one.",
       imageUrl: "/portfolio.png",
-      slug: "project-one",
+      slug: "portfolio",
     },
     {
-      name: "Project Two",
+      name: "idekCTF",
       description: "A brief description of project two.",
       imageUrl: "/idekctf.png",
-      slug: "project-two",
+      slug: "idekctf",
     },
     {
-        name: "Project Two",
+        name: "Vision AI",
         description: "A brief description of project two.",
         imageUrl: "/visionai.png",
-        slug: "project-two",
+        slug: "vision-ai",
     },
     {
-        name: "Project Two",
+        name: "Chasepixel",
         description: "A brief description of project two.",
         imageUrl: "/chasepixel.png",
-        slug: "project-two",
+        slug: "chasepixel",
     },
     {
-        name: "Project Two",
+        name: "Animusic Ensembles",
         description: "A brief description of project two.",
         imageUrl: "/animusic.png",
-        slug: "project-two",
+        slug: "animusic-ensembles",
     },
     {
-        name: "Project Two",
+        name: "Shiny Octo Potato",
         description: "A brief description of project two.",
         imageUrl: "/shinyocto.png",
-        slug: "project-two",
+        slug: "shiny-octo-potato",
     },
     
     
