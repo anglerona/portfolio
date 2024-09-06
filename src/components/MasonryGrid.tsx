@@ -33,7 +33,7 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
               key={project.slug}
               href={`/design/${project.slug}`}
               passHref
-              className="relative group block overflow-hidden rounded-lg  border-white/30 border mb-4"
+              className="relative group block overflow-hidden rounded-lg  border-white/20 border mb-4"
               style={{ breakInside: "avoid" }}
             >
               {/* Image */}
