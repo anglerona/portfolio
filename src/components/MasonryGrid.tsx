@@ -42,7 +42,7 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
                 alt={project.name}
                 width={500}
                 height={500}
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Hover Effect */}
