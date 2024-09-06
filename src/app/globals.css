@@ -51,4 +51,24 @@
   .bg-background {
     background-color: #0b0111;
   }
+  /* Masonry Grid CSS */
+.masonry-grid {
+  column-count: 1; /* Default to 1 column for small screens */
+  column-gap: 16px; /* Gap between columns */
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 2; /* Two columns for medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3; /* Three columns for large screens */
+  }
+}
+
+
+
 }
