@@ -10,17 +10,17 @@ const Animusic = () => {
                 <StarsBackground className="fixed top-0 left-0 w-full h-full z-[-1]" />
                 <ShootingStars className="fixed top-0 left-0 w-full h-full z-[-2]" />
 
-                <div className="relative z-10">
-                    <div>
-                        idekctf
+                <div className="relative z-10 ">
+                    <h2 className="py-12 font-semibold text-4xl text-center">Animusic Ensembles</h2>
+                    
+                    <div className="px-4 w-full lg:w-[600px] aspect-auto mx-auto">
+                        <Image src={"/animusic.png"} alt="animusic" width={500} height={500} className="w-full h-auto object-cover rounded-xl" />
                     </div>
-                    <div className="px-8 aspect-auto">
-                        <Image src={"/animusic.png"} alt="animusic" width={300} height={300} className="w-[600px] h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
-                    </div>
-                    <div className=" px-8 aspect-auto">
-                        <Image src={"/violin.png"} alt="ctf24" width={500} height={500} className="w-96 h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className=" px-4 w-full lg:w-96 aspect-auto mx-auto">
+                        <Image src={"/violin.png"} alt="violin-annie" width={500} height={500} className="w-full h-auto object-cover" />
                     </div>
                 </div>
+                <div className="h-28"></div>
             </div>
         </FadeInSection>
     )

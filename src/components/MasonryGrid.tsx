@@ -46,7 +46,7 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
               />
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-white text-xl font-semibold">
                   {project.name}
                 </h3>

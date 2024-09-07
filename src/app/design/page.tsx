@@ -6,38 +6,38 @@ import { StarsBackground } from "@/components/ui/stars-background"
 
 const projects = [
     {
-      name: "Portfolio",
-      description: "A brief description of project one.",
+      name: "Personal Portfolio",
+      description: "Designed the layouts and UI components of personal portfolio website.",
       imageUrl: "/portfolio.png",
       slug: "portfolio",
     },
     {
       name: "idekCTF",
-      description: "A brief description of project two.",
+      description: "Created a collection of SVG assets, stickers, and illustrations for cybersecurity competition.",
       imageUrl: "/idekctf.png",
       slug: "idekctf",
     },
     {
         name: "Vision AI",
-        description: "A brief description of project two.",
+        description: "Designed a style guide and landing page for an accessibility startup.",
         imageUrl: "/visionai.png",
         slug: "vision-ai",
     },
     {
         name: "Chasepixel",
-        description: "A brief description of project two.",
+        description: "Created a collection of SVG character assets for a web design startup.",
         imageUrl: "/chasepixel.png",
         slug: "chasepixel",
     },
     {
         name: "Animusic Ensembles",
-        description: "A brief description of project two.",
+        description: "Illustrated stickers and a keychain of the club mascot for merch.",
         imageUrl: "/animusic.png",
         slug: "animusic-ensembles",
     },
     {
         name: "Shiny Octo Potato",
-        description: "A brief description of project two.",
+        description: "Illustrated assets for a Suika Game clone.",
         imageUrl: "/shinyocto.png",
         slug: "shiny-octo-potato",
     },
