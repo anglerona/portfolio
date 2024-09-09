@@ -43,14 +43,14 @@ const Contact = () => {
         </div>
 
         {/* Divider */}
-        <FadeInSection>
+        {/* <FadeInSection> */}
           <div className="inline-flex py-20 items-center justify-center w-full px-8">
             <hr className="w-96 h-px rounded bg-purple-300 border-0 " />
             <span className="absolute text-sm px-3 bg-background text-purple-300">
               anglerona • 2024
             </span>
           </div>
-        </FadeInSection>
+        {/* </FadeInSection> */}
       </div>
     </FadeInSection>
   );
