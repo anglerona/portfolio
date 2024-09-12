@@ -65,10 +65,10 @@ const Idek = () => {
           <FadeInSection>
             <div className="w-full pb-20 mx-auto lg:w-[800px] px-4 aspect-auto">
               <Image
-                src={"/idek2024.svg"}
+                src={"/idek2024.png"}
                 alt="ctf24"
-                width={500}
-                height={500}
+                width={3000}
+                height={3000}
                 className="w-full rounded-lg h-auto object-cover"
               />
               <h2 className="font-normal pt-8 text-2xl text-center">
