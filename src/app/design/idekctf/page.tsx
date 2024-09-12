@@ -26,14 +26,15 @@ const Idek = () => {
                 alt="daytime banner"
                 width={10000}
                 height={500}
-                className="w-full rounded-lg h-auto object-cover pb-12"
+                className="w-full rounded-xl h-auto object-cover mb-8"
               />
+
               <Image
                 src={"/Night.png"}
                 alt="nighttime banner"
                 width={10000}
                 height={500}
-                className="w-full rounded-lg h-auto object-cover"
+                className="w-full rounded-xl h-auto object-cover"
               />
               <h2 className="font-normal pt-8 text-2xl text-center">
                 Commissioned Art
@@ -82,7 +83,7 @@ const Idek = () => {
 
           <FadeInSection>
             {/* Stickers Section */}
-            <div className="w-full pb-20 mx-auto lg:w-[900px] px-4 aspect-auto">
+            <div className="w-full mx-auto lg:w-[900px] px-4 aspect-auto">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
                 <Image
                   src={"/goose.jpg"}
