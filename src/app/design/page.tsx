@@ -14,7 +14,7 @@ const projects = [
     {
       name: "idekCTF",
       description: "Created a collection of SVG assets, stickers, and illustrations for cybersecurity competition.",
-      imageUrl: "/drinkspill.png",
+      imageUrl: "/Day.png",
       slug: "idekctf",
     },
     {

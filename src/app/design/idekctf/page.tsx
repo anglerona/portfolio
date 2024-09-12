@@ -18,6 +18,31 @@ const Idek = () => {
                 </div>
                 <h2 className="py-12 font-semibold text-4xl text-center">idekCTF</h2>
             </FadeInSection>
+
+            <FadeInSection>
+            <div className="w-full pb-20 mx-auto lg:w-[1100px] px-4 aspect-auto">
+              <Image
+                src={"/Day.png"}
+                alt="daytime banner"
+                width={10000}
+                height={500}
+                className="w-full rounded-lg h-auto object-cover pb-12"
+              />
+              <Image
+                src={"/Night.png"}
+                alt="nighttime banner"
+                width={10000}
+                height={500}
+                className="w-full rounded-lg h-auto object-cover"
+              />
+              <h2 className="font-normal pt-8 text-2xl text-center">
+                Commissioned Art
+              </h2>
+              <p className="pt-4">
+                Used Procreate illustrate website banner in both dark and light mode.
+              </p>
+            </div>
+          </FadeInSection>
           
           <FadeInSection>
             <div className="w-full pb-20 mx-auto lg:w-[650px] px-4 aspect-auto">
@@ -106,7 +131,7 @@ const Idek = () => {
             </div>
           </FadeInSection>
 
-          <FadeInSection>
+          {/* <FadeInSection>
             <div className="w-full mx-auto lg:w-[700px] px-4 aspect-auto">
               <Image
                 src={"/idek2022.svg"}
@@ -123,7 +148,7 @@ const Idek = () => {
                 the competition website.
               </p>
             </div>
-          </FadeInSection>
+          </FadeInSection> */}
           <div className="w-full pt-12 flex justify-center">
             <BackButton />
           </div>
