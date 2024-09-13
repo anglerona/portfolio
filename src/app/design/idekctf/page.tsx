@@ -62,6 +62,24 @@ const Idek = () => {
               </p>
             </div>
           </FadeInSection>
+
+          <FadeInSection>
+            <div className="w-full pb-20 mx-auto lg:w-[1000px] px-4 aspect-auto">
+              <Image
+                src={"/banner.png"}
+                alt="banner"
+                width={1000}
+                height={1000}
+                className="w-full rounded-lg h-auto object-cover"
+              />
+              <h2 className="font-normal pt-8 text-2xl text-center">
+                Banner Art
+              </h2>
+              <p className="pt-4">
+                Used Procreate and Figma to create a banner for a team that was sponsored to compete.
+              </p>
+            </div>
+          </FadeInSection>
           <FadeInSection>
             <div className="w-full pb-20 mx-auto lg:w-[800px] px-4 aspect-auto">
               <Image
@@ -83,73 +101,55 @@ const Idek = () => {
 
           <FadeInSection>
             {/* Stickers Section */}
-            <div className="w-full mx-auto lg:w-[900px] px-4 aspect-auto">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
-                <Image
-                  src={"/goose.jpg"}
-                  alt="goose"
-                  width={500}
-                  height={500}
-                  className="w-full rounded-xl h-auto object-cover"
-                />
-                <Image
-                  src={"/egg.jpg"}
-                  alt="egg"
-                  width={500}
-                  height={500}
-                  className="w-full rounded-xl h-auto object-cover"
-                />
-                <Image
-                  src={"/octopus.jpg"}
-                  alt="octopus"
-                  width={500}
-                  height={500}
-                  className="w-full rounded-xl h-auto object-cover"
-                />
-                <Image
-                  src={"/cactus.jpg"}
-                  alt="cactus"
-                  width={500}
-                  height={500}
-                  className="w-full rounded-xl h-auto object-cover"
-                />
-                <Image
-                  src={"/girl.jpg"}
-                  alt="girl"
-                  width={500}
-                  height={500}
-                  className="w-full rounded-xl h-auto object-cover"
-                />
-              </div>
+            <div className="w-full mx-auto lg:w-[1200px] px-4">
+                <div className="flex flex-wrap justify-center gap-4">
+                    {/* Images */}
+                    <Image
+                    src={"/goose.jpg"}
+                    alt="goose"
+                    width={500}
+                    height={500}
+                    className="w-full max-w-[340px] rounded-xl h-auto object-cover"
+                    />
+                    <Image
+                    src={"/egg.jpg"}
+                    alt="egg"
+                    width={500}
+                    height={500}
+                    className="w-full max-w-[340px] rounded-xl h-auto object-cover"
+                    />
+                    <Image
+                    src={"/octopus.jpg"}
+                    alt="octopus"
+                    width={500}
+                    height={500}
+                    className="w-full max-w-[340px] rounded-xl h-auto object-cover"
+                    />
+                    <Image
+                    src={"/cactus.jpg"}
+                    alt="cactus"
+                    width={500}
+                    height={500}
+                    className="w-full max-w-[340px] rounded-xl h-auto object-cover"
+                    />
+                    <Image
+                    src={"/girl.jpg"}
+                    alt="girl"
+                    width={500}
+                    height={500}
+                    className="w-full max-w-[340px] rounded-xl h-auto object-cover"
+                    />
+                </div>
 
-              <h2 className="font-normal pt-8 text-2xl text-center">
-                Stickers
-              </h2>
-              <p className="pt-4">
-                Used Figma and Procreate to create stickers to give out to
-                participants.
-              </p>
+                <h2 className="font-normal pt-8 text-2xl text-center">
+                    Stickers
+                </h2>
+                <p className="pt-4">
+                    Used Figma and Procreate to create stickers to give out to participants.
+                </p>
             </div>
           </FadeInSection>
 
-          {/* <FadeInSection>
-            <div className="w-full mx-auto lg:w-[700px] px-4 aspect-auto">
-              <Image
-                src={"/idek2022.svg"}
-                alt="ctf22"
-                width={500}
-                height={500}
-                className="w-full rounded-xl h-auto object-cover"
-              />
-              <h2 className="font-normal pt-8 text-2xl text-center">
-                Web Assets
-              </h2>
-              <p className="pt-4">
-                Used Figma to illustrate 5 shrug-themed SVG characters to use on
-                the competition website.
-              </p>
-            </div>
-          </FadeInSection> */}
           <div className="w-full pt-12 flex justify-center">
             <BackButton />
           </div>
