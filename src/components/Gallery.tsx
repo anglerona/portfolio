@@ -93,7 +93,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 alt={`Image ${selectedIndex}`}
                 width={1200}
                 height={1200}
-                className="w-auto mx-auto h-full rounded-lg"
+                className="w-full px-4 lg:px-12 mx-auto h-auto rounded-lg"
               />
             </div>
 
