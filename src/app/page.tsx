@@ -92,9 +92,9 @@ export default function Home() {
             />
             <div className="px-4 py-8">
               <h2 className="font-semibold pb-4 text-4xl">Hi, I&apos;m Angelina</h2>
-              <p>
+              <p className="">
                 I&apos;m a software engineering student @ uWaterloo and I also do
-                freelance design/illustration work. Thanks for stopping by!
+                freelance design/illustration work. <br /> Thanks for stopping by!
               </p>
             </div>
             <div className="flex flex-col md:flex-row gap-4 px-4 w-full justify-center">
