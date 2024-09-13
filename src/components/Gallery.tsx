@@ -79,12 +79,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             className="relative w-full max-w-4xl overflow-hidden"
             ref={carouselRef}
           >
-            <button
+            {/* <button
               className="absolute top-0 right-0 text-white text-3xl font-bold p-4"
               onClick={closeImage}
             >
               &times;
-            </button>
+            </button> */}
 
             {/* Image with smooth transition */}
             <div className={`transition-opacity duration-500 ${transitioning ? "opacity-0" : "opacity-100"}`}>
