@@ -63,6 +63,13 @@ const VisionAI = () => {
                             alt="drink spilled"
                             width={2000}
                             height={2000}
+                            className="w-full mb-8 rounded-lg h-auto object-cover"
+                        />
+                        <Image
+                            src={"/ui.png"}
+                            alt="ui components"
+                            width={2000}
+                            height={2000}
                             className="w-full rounded-lg h-auto object-cover"
                         />
                         <h2 className="font-normal pt-8 text-2xl text-center">
