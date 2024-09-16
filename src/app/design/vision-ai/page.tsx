@@ -49,8 +49,9 @@ const VisionAI = () => {
                         </div>
                     </FadeInSection>
 
-                    <FadeInSection>
+                    
                         <div className="w-full mx-auto lg:w-[900px] px-4 aspect-auto">
+                        <FadeInSection>
                         <Image
                             src={"/Colours.png"}
                             alt="colour scheme"
@@ -58,6 +59,8 @@ const VisionAI = () => {
                             height={2000}
                             className="w-full rounded-lg mb-8 h-auto object-cover"
                         />
+                        </FadeInSection>
+                        <FadeInSection>
                         <Image
                             src={"/Typography.png"}
                             alt="drink spilled"
@@ -65,6 +68,8 @@ const VisionAI = () => {
                             height={2000}
                             className="w-full mb-8 rounded-lg h-auto object-cover"
                         />
+                        </FadeInSection>
+                        <FadeInSection>
                         <Image
                             src={"/ui.png"}
                             alt="ui components"
@@ -78,8 +83,9 @@ const VisionAI = () => {
                         <p className="pt-4">
                             Created a style guide that includes colour scheme, typography, and UI components that adheres to an accessibility-focused design language
                         </p>
+                        </FadeInSection>
                         </div>
-                    </FadeInSection>
+                    
                     
                     <div className="w-full pt-12 flex justify-center">
                         <BackButton />
