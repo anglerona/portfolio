@@ -36,7 +36,7 @@ const VisionAI = () => {
                             alt="Vision AI landing page"
                             width={2000}
                             height={2000}
-                            className="w-full rounded-lg mb-8 h-auto object-cover"
+                            className="w-full rounded-lg mb-8 border border-white/20 h-auto object-cover"
                         />
                         <ImageGallery images={images} />
                         
@@ -57,7 +57,7 @@ const VisionAI = () => {
                             alt="colour scheme"
                             width={2000}
                             height={2000}
-                            className="w-full rounded-lg mb-8 h-auto object-cover"
+                            className="w-full rounded-lg border border-white/20 mb-8 h-auto object-cover"
                         />
                         </FadeInSection>
                         <FadeInSection>
@@ -66,7 +66,7 @@ const VisionAI = () => {
                             alt="drink spilled"
                             width={2000}
                             height={2000}
-                            className="w-full mb-8 rounded-lg h-auto object-cover"
+                            className="w-full mb-8 rounded-lg border border-white/20 h-auto object-cover"
                         />
                         </FadeInSection>
                         <FadeInSection>
@@ -75,7 +75,7 @@ const VisionAI = () => {
                             alt="ui components"
                             width={2000}
                             height={2000}
-                            className="w-full rounded-lg h-auto object-cover"
+                            className="w-full rounded-lg border border-white/20 h-auto object-cover"
                         />
                         <h2 className="font-normal pt-8 text-2xl text-center">
                             Style Guide

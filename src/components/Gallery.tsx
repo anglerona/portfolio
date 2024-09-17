@@ -51,7 +51,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   return (
     <div>
       {/* Responsive Horizontal Scroll on Mobile, Grid on Larger Screens */}
-      <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap">
+      <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap">
         {images.map((image, index) => (
           <div
             key={index}
@@ -63,7 +63,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               alt={`Image ${index}`}
               width={1200}
               height={1200}
-              className="w-full h-auto rounded-lg object-cover"
+              className="w-full h-auto rounded-lg border border-white/20 object-cover"
             />
           </div>
         ))}
@@ -93,14 +93,14 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 alt={`Image ${selectedIndex}`}
                 width={1200}
                 height={1200}
-                className="w-full px-4 lg:px-12 mx-auto h-auto rounded-lg"
+                className="w-auto  mx-auto border border-white/20 lg:my-40 max-h-screen  rounded-lg"
               />
             </div>
 
             {/* Left Button */}
             <button
               onClick={showPrevImage}
-              className="absolute left-0 top-1/2 text-white text-3xl px-4 py-2 rounded-full transform -translate-y-1/2"
+              className="absolute left-0 top-1/2 text-white text-3xl pl-4 pr-4 lg:pr-8 py-2 rounded-full transform -translate-y-1/2"
             >
               &#8249;
             </button>
@@ -108,7 +108,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             {/* Right Button */}
             <button
               onClick={showNextImage}
-              className="absolute right-0 top-1/2 text-white text-3xl px-4 py-2 rounded-full transform -translate-y-1/2"
+              className="absolute right-0 top-1/2 text-white text-3xl pr-4 pl-4 lg:pl-8 py-2 rounded-full transform -translate-y-1/2"
             >
               &#8250;
             </button>
