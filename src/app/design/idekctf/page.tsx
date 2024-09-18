@@ -37,7 +37,7 @@ const Idek = () => {
                 className="w-full rounded-xl h-auto object-cover"
               />
               <h2 className="font-normal pt-8 text-2xl text-center">
-                Commissioned Art
+                Website Banner
               </h2>
               <p className="pt-4">
                 Used Procreate illustrate website banner in both dark and light mode.
