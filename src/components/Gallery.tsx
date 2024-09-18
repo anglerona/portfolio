@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 
 interface ImageGalleryProps {
   images: string[];
@@ -26,7 +27,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         const prevIndex = selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
         setSelectedIndex(prevIndex);
         setTransitioning(false);
-      }, 300); // Adjust timing as needed
+      }, 300);
     }
   };
 
@@ -37,21 +38,28 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         const nextIndex = selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
         setSelectedIndex(nextIndex);
         setTransitioning(false);
-      }, 300); // Adjust timing as needed
+      }, 300);
     }
   };
 
   // Close modal if clicking outside the image or buttons
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (carouselRef.current && !carouselRef.current.contains(e.target as Node)) {
+    if (e.target === e.currentTarget) {
       closeImage();
     }
   };
 
+  // Swipe handlers using react-swipeable
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => showNextImage(),
+    onSwipedRight: () => showPrevImage(),
+    trackMouse: true, // This enables swiping using a mouse as well (optional)
+  });
+
   return (
     <div>
       {/* Responsive Horizontal Scroll on Mobile, Grid on Larger Screens */}
-      <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 items-center overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap">
+      <div className="flex lg:grid lg:grid-cols-3 gap-4 items-center overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap">
         {images.map((image, index) => (
           <div
             key={index}
@@ -73,19 +81,19 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
       {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
-          onClick={handleOverlayClick}
+          onClick={handleOverlayClick} // Attach overlay click handler
+          {...swipeHandlers} // Attach swipe handlers to the carousel container
         >
-          <div
-            className="relative w-full max-w-4xl overflow-hidden"
-            ref={carouselRef}
+          {/* X Button Positioned at the Top-Right of the Screen */}
+          <button
+            className="absolute top-4 right-4 text-white text-3xl font-bold p-2  rounded-full z-50"
+            onClick={closeImage}
+            aria-label="Close Carousel"
           >
-            {/* <button
-              className="absolute top-0 right-0 text-white text-3xl font-bold p-4"
-              onClick={closeImage}
-            >
-              &times;
-            </button> */}
+            &times;
+          </button>
 
+          <div className="relative w-full lg:w-auto overflow-hidden" ref={carouselRef}>
             {/* Image with smooth transition */}
             <div className={`transition-opacity duration-500 ${transitioning ? "opacity-0" : "opacity-100"}`}>
               <Image
@@ -93,7 +101,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 alt={`Image ${selectedIndex}`}
                 width={1200}
                 height={1200}
-                className="w-auto  mx-auto border border-white/20 lg:my-40 max-h-screen  rounded-lg"
+                className="w-full lg:w-auto mx-auto border border-white/20 max-h-screen rounded-lg"
               />
             </div>
 
