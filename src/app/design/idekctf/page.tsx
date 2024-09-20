@@ -76,7 +76,7 @@ const Idek = () => {
                 Banner Art
               </h2>
               <p className="pt-4">
-                Used Procreate and Figma to create a banner for a team that was sponsored to compete.
+                Used Procreate and Figma to create a banner for idekCTF joining with other CTF groups to compete as a single team.
               </p>
             </div>
           </FadeInSection>
@@ -94,7 +94,7 @@ const Idek = () => {
               </h2>
               <p className="pt-4">
                 Used Figma to illustrate a collection of retro-themed SVG
-                characters to use on the competition website.
+                characters to use on the competition website and promotional content.
               </p>
             </div>
           </FadeInSection>
@@ -145,7 +145,7 @@ const Idek = () => {
                     Stickers
                 </h2>
                 <p className="pt-4">
-                    Used Figma and Procreate to create stickers to give out to participants.
+                    Used Figma and Procreate to create shrug-themed character stickers to give out to participants of the competition.
                 </p>
             </div>
           </FadeInSection>

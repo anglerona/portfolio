@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/goose.png" />
+        <link rel="icon" href="/goose.png" className="rounded-full" />
       </head>
       <body className="bg-background text-white antialiased">{children}</body>
     </html>

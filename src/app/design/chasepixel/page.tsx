@@ -23,7 +23,9 @@ const Chasepixel = () => {
                         <div className="w-full px-4 pb-20 lg:w-[1100px] aspect-auto mx-auto">
                             <Image src={"/chasepixel.png"} alt="chasepixel" width={2000} height={2000} className="w-full h-auto rounded-lg object-cover" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Graphic Assets</h2>
-                            <p className="pt-4">Used Procreate to create a collection of SVG assets of a diverse group of people collaborating in tech.</p>
+                            <p className="pt-4">
+                                Used Procreate to create a collection of SVG assets to be used by Chasepixel for their website and social media.
+                            </p>
                         </div>
                     </FadeInSection>
 
@@ -31,7 +33,7 @@ const Chasepixel = () => {
                         <div className="w-full px-4 lg:w-[1100px] aspect-auto mx-auto">
                             <Image src={"/chasepixel-colors.png"} alt="color-scheme" width={2000} height={2000} className="w-full h-auto rounded-lg object-cover" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Colour Palette</h2>
-                            <p className="pt-4">Used neutral and pastel colours for a cohesive look.</p>
+                            <p className="pt-4">Stuck to a neutral and pastel colour scheme for a cohesive look.</p>
                         </div>
                     </FadeInSection>
 
