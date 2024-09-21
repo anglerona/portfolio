@@ -24,7 +24,7 @@ const Card = ({
   badges,
 }: CardProps) => {
   return (
-    <div className="w-full bg-background max-w-80 md:max-w-72 border rounded-xl border-purple-300 transition-shadow duration-500 shadow-[0_0_6px_1px_rgba(212,159,255,1)]">
+    <div className="w-full bg-background max-w-80 min-h-[460px] md:max-w-72 border rounded-xl border-purple-300 transition-shadow duration-500 shadow-[0_0_6px_1px_rgba(212,159,255,1)]">
       <div className="w-full h-40 overflow-hidden rounded-xl">
         <Image
           src={imageHref}
@@ -34,7 +34,7 @@ const Card = ({
           className="object-fit"
         />
       </div>
-      <div className="px-4 space-y-3 text-center py-4">
+      <div className="px-4 space-y-5 text-center py-4">
         <div className="flex justify-between">
           <Link
             href={sourceCodeLink}
@@ -53,7 +53,7 @@ const Card = ({
         </div>
         <h2 className="font-medium">{title}</h2>
         <p className="text-sm pb-3">{description}</p>
-        <div className="flex flex-wrap justify-center gap-2 pb-4">
+        <div className="flex flex-wrap justify-center gap-2 pb-2 ">
           {badges.map((badgeLabel, index) => (
             <Badge key={index} label={badgeLabel} />
           ))}
