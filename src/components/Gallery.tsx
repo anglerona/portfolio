@@ -1,7 +1,10 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
+import Left from "@/assets/left.svg"; 
+import Right from "@/assets/right.svg"; 
+import X from "@/assets/x.svg";
 
 interface ImageGalleryProps {
   images: string[];
@@ -42,6 +45,22 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     }
   };
 
+  // Disable background scrolling when the modal is open
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      // Disable scrolling on body when modal is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore scrolling when modal is closed
+      document.body.style.overflow = "";
+    }
+
+    // Clean up when component is unmounted or modal is closed
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedIndex]);
+
   // Close modal if clicking outside the image or buttons
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.target === e.currentTarget) {
@@ -59,7 +78,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   return (
     <div>
       {/* Responsive Horizontal Scroll on Mobile, Grid on Larger Screens */}
-      <div className="flex lg:grid lg:grid-cols-3 gap-4 items-center overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap">
+      <div className="flex lg:grid lg:grid-cols-3 scrollbar-hide gap-4 items-center overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap">
         {images.map((image, index) => (
           <div
             key={index}
@@ -86,11 +105,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         >
           {/* X Button Positioned at the Top-Right of the Screen */}
           <button
-            className="absolute top-4 right-4 text-white text-3xl font-bold p-2  rounded-full z-50"
+            className="absolute top-4 right-4 text-white opacity-70 hover:opacity-100 duration-200 text-3xl font-bold p-2 rounded-full z-50"
             onClick={closeImage}
             aria-label="Close Carousel"
           >
-            &times;
+            <X className="h-4 w-4 md:h-5 md:w-5 fill-current" />
           </button>
 
           <div className="relative w-full lg:w-auto overflow-hidden" ref={carouselRef}>
@@ -104,23 +123,23 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
                 className="w-full lg:w-auto mx-auto border border-white/20 max-h-screen rounded-lg"
               />
             </div>
-
-            {/* Left Button */}
-            <button
-              onClick={showPrevImage}
-              className="absolute left-0 top-1/2 text-white text-3xl pl-4 pr-4 lg:pr-8 py-2 rounded-full transform -translate-y-1/2"
-            >
-              &#8249;
-            </button>
-
-            {/* Right Button */}
-            <button
-              onClick={showNextImage}
-              className="absolute right-0 top-1/2 text-white text-3xl pr-4 pl-4 lg:pl-8 py-2 rounded-full transform -translate-y-1/2"
-            >
-              &#8250;
-            </button>
           </div>
+
+          {/* Left Button Fixed Outside Image */}
+          <button
+            onClick={showPrevImage}
+            className="fixed left-3 md:left-8 top-1/2 duration-200 opacity-70 hover:opacity-100 text-3xl md:p-4 rounded-full transform -translate-y-1/2 z-50"
+          >
+            <Left className="h-3 w-3 md:h-5 md:w-5 fill-current" />
+          </button>
+
+          {/* Right Button Fixed Outside Image */}
+          <button
+            onClick={showNextImage}
+            className="fixed right-3 md:right-8 top-1/2 duration-200 opacity-70 hover:opacity-100 text-3xl md:p-4  rounded-full transform -translate-y-1/2 z-50"
+          >
+            <Right className="h-3 w-3 md:h-5 md:w-5 fill-current" />
+          </button>
         </div>
       )}
     </div>

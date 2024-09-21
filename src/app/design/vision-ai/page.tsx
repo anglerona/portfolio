@@ -50,7 +50,7 @@ const VisionAI = () => {
                     </FadeInSection>
 
                     
-                        <div className="w-full mx-auto lg:w-[900px] px-4 aspect-auto">
+                        <div className="w-full mx-auto lg:w-[900px] px-4 aspect-auto ">
                         <FadeInSection>
                         <Image
                             src={"/Colours.png"}

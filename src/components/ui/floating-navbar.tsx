@@ -12,7 +12,7 @@ import Link from "next/link";
 export const FloatingNav = ({
   navItems,
   className,
-  pageType, // Add pageType prop
+  pageType,
 }: {
   navItems: {
     name: string;
@@ -20,7 +20,7 @@ export const FloatingNav = ({
     icon?: JSX.Element;
   }[];
   className?: string;
-  pageType: "dev" | "design"; // Define the type for pageType
+  pageType: "dev" | "design";
 }) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
@@ -56,6 +56,15 @@ export const FloatingNav = ({
   // Determine resume link based on pageType
   const resumeLink = pageType === "dev" ? "/dev-resume.pdf" : "/design-resume.pdf";
 
+  // Smooth scroll handler
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault(); // Prevent the default link behavior
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <AnimatePresence mode="wait">
       {visible && (
@@ -70,16 +79,35 @@ export const FloatingNav = ({
           )}
         >
           {navItems.map((navItem, idx) => (
-            <Link
-              key={`link-${idx}`}
-              href={navItem.link}
-              className={cn(
-                "relative text-neutral-300 items-center flex space-x-1 hover:text-white transition-all duration-300"
+            <React.Fragment key={`link-${idx}`}>
+              {navItem.link === "/" ? (
+                // Directly use Link for Home without smooth scroll
+                <Link
+                  href={navItem.link}
+                  className={cn(
+                    "relative text-neutral-300 items-center flex space-x-1 hover:text-white transition-all duration-300"
+                  )}
+                >
+                  <span className="block sm:hidden">{navItem.icon}</span>
+                  <span className="hidden sm:block text-sm">{navItem.name}</span>
+                </Link>
+              ) : (
+                // For all other buttons, handle smooth scrolling
+                <a
+                  href={navItem.link}
+                  onClick={(e) => {
+                    const targetId = navItem.link.split("#")[1];
+                    handleSmoothScroll(e, `#${targetId}`);
+                  }}
+                  className={cn(
+                    "relative text-neutral-300 items-center flex space-x-1 hover:text-white transition-all duration-300"
+                  )}
+                >
+                  <span className="block sm:hidden">{navItem.icon}</span>
+                  <span className="hidden sm:block text-sm">{navItem.name}</span>
+                </a>
               )}
-            >
-              <span className="block sm:hidden">{navItem.icon}</span>
-              <span className="hidden sm:block text-sm">{navItem.name}</span>
-            </Link>
+            </React.Fragment>
           ))}
           <a
             href={resumeLink}

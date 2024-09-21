@@ -18,7 +18,7 @@ interface MasonryGridProps {
 export default function MasonryGrid({ projects }: MasonryGridProps) {
   const [selectedTag, setSelectedTag] = useState<string>("All");
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects); // Store filtered projects
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
 
   // Function to handle filtering with smooth transition
   const handleFilterChange = (tag: string) => {
@@ -28,7 +28,10 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
     // Wait for the fade-out animation to finish before updating the content
     setTimeout(() => {
       // Update the filtered projects after fade-out
-      const updatedProjects = tag === "All" ? projects : projects.filter((project) => project.tags.includes(tag));
+      const updatedProjects =
+        tag === "All"
+          ? projects
+          : projects.filter((project) => project.tags.includes(tag));
       setFilteredProjects(updatedProjects);
 
       // Start fade-in after updating the grid content
@@ -44,25 +47,30 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
         <h2 className="py-12 font-semibold text-4xl text-center">Projects</h2>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8 px-8">
-          {["All", "UI/UX", "Illustrations", "Merch"].map((tag) => (
-            <button
-              key={tag}
-              onClick={() => handleFilterChange(tag)}
-              className={`px-6 py-2 text-sm sm:text-base border rounded-full transition-all duration-200 ${
-                selectedTag === tag
-                  ? "text-purple-300 border-purple-300 shadow-[0_0_2px_1px_rgba(212,159,255,0.5)]"
-                  : "text-white border-white opacity-70 hover:opacity-100"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
+        <div className="mb-8 px-4 sm:px-8">
+          {/* Horizontally scrollable container on small screens */}
+          <div className="flex md:justify-center  overflow-x-auto space-x-4 scrollbar-hide">
+            {["All", "UI/UX", "Illustrations", "Merch"].map((tag) => (
+              <button
+                key={tag}
+                onClick={() => handleFilterChange(tag)}
+                className={`px-6 py-2 text-sm sm:text-base border rounded-full transition-all duration-200 whitespace-nowrap ${
+                  selectedTag === tag
+                    ? "text-purple-300 border-purple-300 shadow-[0_0_2px_1px_rgba(212,159,255,0.5)]"
+                    : "text-white border-white opacity-70 hover:opacity-100"
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Masonry Grid with smooth transition */}
         <div
-          className={`transition-opacity duration-500 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+          className={`transition-opacity duration-500 ${
+            isTransitioning ? "opacity-0" : "opacity-100"
+          }`}
         >
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 px-4">
             {filteredProjects.map((project) => (
