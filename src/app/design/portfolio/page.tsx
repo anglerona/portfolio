@@ -32,7 +32,7 @@ const Portfolio = () => {
                     
                         
                     <FadeInSection>
-                        <div className="w-full mx-auto lg:w-[1000px] px-4 aspect-auto">
+                        <div className="w-full mx-auto pb-20 lg:w-[1000px] px-4 aspect-auto">
                         <Image
                             src={"/home.png"}
                             alt="home page"
@@ -46,6 +46,24 @@ const Portfolio = () => {
                         </h2>
                         <p className="pt-4">
                             Created web page prototypes in Figma
+                        </p>
+                        </div>
+                    </FadeInSection>
+
+                    <FadeInSection>
+                        <div className="w-full mx-auto lg:w-[1000px] px-4 aspect-auto">
+                        <Image
+                            src={"/style.png"}
+                            alt="portfolio style guide"
+                            width={2000}
+                            height={2000}
+                            className="w-full rounded-xl h-auto border border-white/20 object-cover"
+                        />
+                        <h2 className="font-normal pt-8 text-2xl text-center">
+                            Style Guide
+                        </h2>
+                        <p className="pt-4">
+                            Created personal portfolio style guide in Figma
                         </p>
                         </div>
                     </FadeInSection>

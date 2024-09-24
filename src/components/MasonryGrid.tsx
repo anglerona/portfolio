@@ -85,8 +85,8 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
                 <Image
                   src={project.imageUrl}
                   alt={project.name}
-                  width={10000}
-                  height={10000}
+                  width={6000}
+                  height={6000}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
