@@ -26,7 +26,7 @@ const Contact = () => {
         <div className="flex flex-col items-center pb-12 px-4 py-3">
           <button
             onClick={handleCopyEmail}
-            className="text-purple-300 w-full max-w-96 bg-transparent border border-purple-300 rounded-md px-4 py-2 cursor-pointer hover:shadow-[0_0_6px_1px_rgba(212,159,255,1)] transition-all duration-500"
+            className="text-purple-300 w-full max-w-96 bg-transparent border border-purple-300 rounded-md px-4 py-2 cursor-pointer hover:shadow-[0_0_8px_1px_rgba(212,159,255,1)] transition-all duration-500"
           >
             {isCopied ? "Email Copied!" : email}
           </button>

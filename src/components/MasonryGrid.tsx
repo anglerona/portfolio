@@ -49,14 +49,14 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
         {/* Filter Buttons */}
         <div className="mb-8 px-4 sm:px-8">
           {/* Horizontally scrollable container on small screens */}
-          <div className="flex md:justify-center  overflow-x-auto space-x-4 scrollbar-hide">
+          <div className="flex md:justify-center py-2 overflow-x-auto space-x-4 scrollbar-hide">
             {["All", "UI/UX", "Illustrations", "Merch"].map((tag) => (
               <button
                 key={tag}
                 onClick={() => handleFilterChange(tag)}
                 className={`px-6 py-2 text-sm sm:text-base border rounded-full transition-all duration-200 whitespace-nowrap ${
                   selectedTag === tag
-                    ? "text-purple-300 border-purple-300 shadow-[0_0_2px_1px_rgba(212,159,255,0.5)]"
+                    ? "text-purple-300 border-purple-300 shadow-[0_0_5px_1.5px_rgba(212,159,255,0.5)]"
                     : "text-white border-white opacity-70 hover:opacity-100"
                 }`}
               >
@@ -85,8 +85,8 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
                 <Image
                   src={project.imageUrl}
                   alt={project.name}
-                  width={6000}
-                  height={6000}
+                  width={2000}
+                  height={2000}
                   className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
