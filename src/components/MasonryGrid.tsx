@@ -47,9 +47,9 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
         <h2 className="py-12 font-semibold text-4xl text-center">Projects</h2>
 
         {/* Filter Buttons */}
-        <div className="mb-8 px-4 sm:px-8">
+        <div className="mb-8 px-4">
           {/* Horizontally scrollable container on small screens */}
-          <div className="flex md:justify-center py-2 overflow-x-auto space-x-4 scrollbar-hide">
+          <div className="flex md:justify-center p-2 overflow-x-auto space-x-4 scrollbar-hide">
             {["All", "UI/UX", "Illustrations", "Merch"].map((tag) => (
               <button
                 key={tag}

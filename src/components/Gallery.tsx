@@ -82,7 +82,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="cursor-pointer flex-shrink-0 w-[80%] sm:w-[60%] md:w-auto"
+            className="cursor-pointer flex-shrink-0 lg:w-full sm:w-[60%] md:w-[40%]"
             onClick={() => openImage(index)}
           >
             <Image
@@ -90,7 +90,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               alt={`Image ${index}`}
               width={1200}
               height={1200}
-              className="w-full h-auto rounded-lg border border-white/20 object-cover"
+              className="w-full h-full rounded-lg border border-white/20 object-cover"
             />
           </div>
         ))}
