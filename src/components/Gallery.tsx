@@ -90,7 +90,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               alt={`Image ${index}`}
               width={1200}
               height={1200}
-              className="w-full h-full rounded-lg border border-white/20 object-cover"
+              className="w-full h-full rounded-lg border py-2 border-white/20 object-cover"
             />
           </div>
         ))}
