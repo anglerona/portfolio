@@ -91,6 +91,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
               width={1200}
               height={1200}
               className="w-full h-full rounded-lg border border-white/20 object-cover"
+              priority={index === 0}
             />
           </div>
         ))}
