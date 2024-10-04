@@ -9,10 +9,10 @@ const images = [
     "/home.png",
     "/dev.png",
     "/design.png",
-    // "/design-projects.png",
-    // "/design-contact.png",
-    
-  ];
+    "/designProject1.png",
+    "/designProject2.png",
+    "/gallery.png"    
+];
 
 const Portfolio = () => {
     return (
