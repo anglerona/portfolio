@@ -40,7 +40,7 @@ const Idek = () => {
                 Website Banner
               </h2>
               <p className="pt-4">
-                Used Procreate illustrate website banner in both dark and light mode.
+              Used Procreate to illustrate a website banner in both dark and light mode
               </p>
             </div>
           </FadeInSection>
@@ -58,7 +58,7 @@ const Idek = () => {
                 Commissioned Art
               </h2>
               <p className="pt-4">
-                Used Procreate to create artwork for competition.
+                Used Procreate to create artwork for the competition.”
               </p>
             </div>
           </FadeInSection>

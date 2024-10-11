@@ -28,7 +28,7 @@ const Animusic = () => {
                         <div className=" px-4 w-full lg:w-[500px] aspect-auto mx-auto">
                             <Image src={"/keychain.png"} alt="violin-annie" width={500} height={500} className="w-full h-auto object-cover" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Keychain</h2>
-                            <p className="pt-4">Illustrated a keychain design of the club mascot playing the violin using Procreate.</p>
+                            <p className="pt-4">Used Procreate to illustrate a keychain design depicting the club mascot playing the violin.</p>
                         </div>
                     </FadeInSection>
                     <div className="w-full pt-12 flex justify-center">

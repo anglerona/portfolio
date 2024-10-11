@@ -6,7 +6,7 @@ const projects = [
     {
         imageHref: "/portfolio.png",
         title: "Portfolio Website",
-        desc: "The site that you are seeing right now! This site contains both my fullstack developer and design/illustration portfolios.",
+        desc: "The site that you are seeing right now! This site contains my fullstack developer portfolio, as well as my portfolio for design and illustration work.",
         code: "https://github.com/anglerona/portfolio",
         hasLiveSite: true,
         link: "https://anglerona.vercel.app/",
@@ -15,7 +15,7 @@ const projects = [
     {
         imageHref: "/goose.png",
         title: "Link-branch",
-        desc: "A Linktree clone, which lets users combine multiple links into a single, customizable profile page.",
+        desc: "A Linktree clone that combines multiple separate links into one customizable profile page",
         code: "https://github.com/anglerona/link-branch",
         hasLiveSite: false,
         link: "https://github.com/anglerona",
@@ -24,7 +24,7 @@ const projects = [
     {
         imageHref: "/fabricate.png",
         title: "Fabricate",
-        desc: "A web app that has 5 AI tools to generate images, music, videos, code snippets, and conversations by providing text prompts.",
+        desc: "A text prompt-based web app that combines five different AI tools: image generation, music, videos, code snippets, and conversations.",
         code: "https://github.com/anglerona/fabricate",
         hasLiveSite: true,
         link: "https://fabricate-chi.vercel.app/",

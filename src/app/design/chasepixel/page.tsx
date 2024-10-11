@@ -33,7 +33,7 @@ const Chasepixel = () => {
                         <div className="w-full px-4 lg:w-[1100px] aspect-auto mx-auto">
                             <Image src={"/chasepixel-colors.png"} alt="color-scheme" width={2000} height={2000} className="w-full h-auto rounded-lg object-cover" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Colour Palette</h2>
-                            <p className="pt-4">Stuck to a neutral and pastel colour scheme for a cohesive look.</p>
+                            <p className="pt-4">Prioritised visual cohesion by using a neutral and pastel colour scheme.</p>
                         </div>
                     </FadeInSection>
 

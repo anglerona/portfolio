@@ -8,7 +8,7 @@ import { StarsBackground } from "@/components/ui/stars-background";
 const projects = [
   {
     name: "Personal Portfolio",
-    description: "Designed the layouts and UI components of personal portfolio website.",
+    description: "Designed the layouts and UI components for a personal portfolio website.",
     imageUrl: "/portfolio.png",
     slug: "portfolio",
     tags: ["UI/UX"],
@@ -36,7 +36,7 @@ const projects = [
   },
   {
     name: "Animusic Ensembles",
-    description: "Illustrated stickers and a keychain of the club mascot for merch.",
+    description: "Illustrated sticker and keychain art of the club mascot to be sold as merch.",
     imageUrl: "/animusic.png",
     slug: "animusic-ensembles",
     tags: ["Merch", "Illustrations"],

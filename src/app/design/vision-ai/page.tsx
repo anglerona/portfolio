@@ -44,7 +44,7 @@ const VisionAI = () => {
                             Landing Page
                         </h2>
                         <p className="pt-4">
-                            Used Figma to design a prototype for a landing page of a WCAG accessibility web app, ensuring seamless user experiences and visual coherence.
+                        Created a prototype for a WCAG accessibility web landing page with Figma, prioritising user experience and visual coherence
                         </p>
                         </div>
                     </FadeInSection>
@@ -81,7 +81,7 @@ const VisionAI = () => {
                             Style Guide
                         </h2>
                         <p className="pt-4">
-                            Created a style guide that includes colour scheme, typography, and UI components that adheres to an accessibility-focused design language
+                        Included colour schemes, typography, and UI elements in an accessibility-focused style guide.
                         </p>
                         </FadeInSection>
                         </div>
