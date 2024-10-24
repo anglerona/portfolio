@@ -17,6 +17,13 @@ const Animusic = () => {
                     </div>
                     <h2 className="py-12 font-semibold text-4xl text-center">Animusic Ensembles</h2>
                     <FadeInSection>
+                        <div className="px-4 pb-20 w-full lg:w-[1100px] aspect-auto mx-auto">
+                            <Image src={"/anicafe.PNG"} alt="anicafe poster" width={1000} height={1000} className="w-full h-auto object-cover rounded-xl" />
+                            <h2 className="font-normal pt-8 text-2xl text-center">Promotional Poster</h2>
+                            <p className="pt-4">Illustrated a poster to advertise a Pokemon Themed Maid Cafe event ran by the club.</p>
+                        </div>
+                    </FadeInSection>
+                    <FadeInSection>
                         <div className="px-4 pb-20 w-full lg:w-[700px] aspect-auto mx-auto">
                             <Image src={"/animusic.png"} alt="animusic" width={1000} height={1000} className="w-full h-auto object-cover rounded-xl" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Sticker Sheet</h2>

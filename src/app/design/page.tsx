@@ -37,7 +37,7 @@ const projects = [
   {
     name: "Animusic Ensembles",
     description: "Illustrated sticker and keychain art of the club mascot to be sold as merch.",
-    imageUrl: "/animusic.png",
+    imageUrl: "/anicafe.PNG",
     slug: "animusic-ensembles",
     tags: ["Merch", "Illustrations"],
   },
