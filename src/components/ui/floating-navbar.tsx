@@ -79,7 +79,7 @@ export const FloatingNav = ({
             className
           )}
         >
-          <Link href={'/'} className="rounded-full opacity-80 hover:opacity-100 duration-200 hover:shadow-[0_0_2px_1px_rgba(212,159,255,1)]">
+          <Link href={'/'} className="rounded-full opacity-80 hover:opacity-100 duration-200">
             <Image src={"/goose.png"} alt={"home"} width={44} height={44} className="rounded-full" />
           </Link>
           {navItems.map((navItem, idx) => (
