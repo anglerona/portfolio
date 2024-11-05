@@ -9,10 +9,7 @@ const Navbar = ({ pageType }: NavbarProps) => {
 
   // Conditionally include the "Work" button if the pageType is "dev"
   const navItems = [
-    {
-      name: "Home",
-      link: `/`,
-    },
+   
     {
       name: "Projects",
       link: `${basePath}/#projects`,

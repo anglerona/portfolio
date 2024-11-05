@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export const FloatingNav = ({
   navItems,
@@ -74,10 +75,13 @@ export const FloatingNav = ({
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-white/[0.2] rounded-full bg-background shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-6 md:pl-8 py-2 items-center justify-center space-x-4 md:space-x-4",
+            "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-white/[0.2] rounded-full bg-background shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-2 py-2 items-center justify-center space-x-4 md:space-x-4",
             className
           )}
         >
+          <Link href={'/'} className="rounded-full opacity-80 hover:opacity-100 duration-200 hover:shadow-[0_0_2px_1px_rgba(212,159,255,1)]">
+            <Image src={"/goose.png"} alt={"home"} width={44} height={44} className="rounded-full" />
+          </Link>
           {navItems.map((navItem, idx) => (
             <React.Fragment key={`link-${idx}`}>
               {navItem.link === "/" ? (
