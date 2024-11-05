@@ -7,6 +7,7 @@ interface NavbarProps {
 const Navbar = ({ pageType }: NavbarProps) => {
   const basePath = pageType === "dev" ? "/dev" : "/design";
 
+  // Conditionally include the "Work" button if the pageType is "dev"
   const navItems = [
     {
       name: "Home",
@@ -16,6 +17,15 @@ const Navbar = ({ pageType }: NavbarProps) => {
       name: "Projects",
       link: `${basePath}/#projects`,
     },
+    ...(pageType === "dev"
+      ? [
+          {
+            name: "Work",
+            link: `${basePath}/#work`,
+          },
+        ]
+      : []),
+    
     {
       name: "Contact",
       link: `${basePath}/#contact`,

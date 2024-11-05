@@ -3,6 +3,8 @@ import DevProjects from "@/components/DevProjects";
 import Navbar from "@/components/Navbar";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
+import { Timeline } from "@/components/ui/timeline";
+import { WorkHistory } from "@/components/WorkHistory";
 
 const Dev = () => {
     return (
@@ -13,7 +15,9 @@ const Dev = () => {
             <div className="relative z-10">
                 <Navbar pageType="dev" />
                 <div className="h-28"></div>
+                
                 <DevProjects />
+                <WorkHistory />
                 <Contact />
             </div>
         </div>
