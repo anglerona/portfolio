@@ -18,7 +18,7 @@ export function WorkHistory() {
             />
           </div>
           <p className="text-neutral-200 text-xl font-semibold mb-8">
-            Fullstack Developeer Intern
+            Fullstack Developer Intern
           </p>
         </div>
       ),
@@ -37,7 +37,7 @@ export function WorkHistory() {
               />
             </div>
             <p className="text-neutral-200 text-xl font-semibold mb-8 mt-6">
-              Junior Fullstack Developeer Intern
+              Junior Fullstack Developer Intern
             </p>
           </div>
         ),
