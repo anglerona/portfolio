@@ -58,7 +58,7 @@ const Idek = () => {
                 Commissioned Art
               </h2>
               <p className="pt-4">
-                Used Procreate to create artwork for the competition.”
+                Used Procreate to create artwork for the competition.
               </p>
             </div>
           </FadeInSection>

@@ -19,7 +19,7 @@ const ShinyOcto = () => {
                     <div className="w-full px-4 lg:w-[600px] aspect-auto mx-auto">
                         <Image src={"/shinyocto.png"} alt="ctf23" width={500} height={500} className="w-full h-auto object-cover" />
                         <h2 className="font-normal pt-8 text-2xl text-center">Fruit Sprites</h2>
-                        <p className="pt-4">“Used Procreate to illustrate 11 game sprites based on the Suika Game fruits.</p>
+                        <p className="pt-4">Used Procreate to illustrate 11 game sprites based on the Suika Game fruits.</p>
                     </div>
                     <div className="w-full pt-12 flex justify-center">
                         <BackButton />
