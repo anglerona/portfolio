@@ -48,6 +48,13 @@ const projects = [
     slug: "shiny-octo-potato",
     tags: ["Illustrations"],
   },
+  {
+    name: "Flappy Penguin",
+    description: "Illustrated assets for a Flappy Bird clone.",
+    imageUrl: "/flappy-penguin.png",
+    slug: "flappy-penguin",
+    tags: ["Illustrations"],
+  },
 ];
 
 const Design = () => {
