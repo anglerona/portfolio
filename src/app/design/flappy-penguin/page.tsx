@@ -18,21 +18,21 @@ const FlappyPenguin = () => {
                     <h2 className="py-12 font-semibold text-4xl text-center">Flappy Penguin</h2>
                     <FadeInSection>
                         <div className="px-4 pb-20 w-full lg:w-[1000px] aspect-auto mx-auto">
-                            <Image src={"/flappy-logos.png"} alt="Logo Designs" width={1000} height={1000} className="w-full h-auto object-cover rounded-xl" />
+                            <Image src={"/flappy-logos.png"} alt="Logo Designs" width={2000} height={2000} className="w-full h-auto object-cover rounded-xl" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Game Title Designs</h2>
                             <p className="pt-4"></p>
                         </div>
                     </FadeInSection>
                     <FadeInSection>
                         <div className="px-4 pb-20 w-full lg:w-[1000px] aspect-auto mx-auto">
-                            <Image src={"/penguin-sprite.png"} alt="penguin sprites" width={1000} height={1000} className="w-full h-auto object-cover rounded-xl" />
+                            <Image src={"/penguin-sprite.png"} alt="penguin sprites" width={1000} height={1000} className="w-full h-auto object-cover" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Penguin Player Sprites</h2>
                             <p className="pt-4"></p>
                         </div>
                     </FadeInSection>
                     <FadeInSection>
                         <div className="px-4 pb-20 w-full lg:w-[1100px] aspect-auto mx-auto">
-                            <Image src={"/ice.png"} alt="ice assets" width={1000} height={1000} className="w-full h-auto object-cover rounded-xl" />
+                            <Image src={"/ice.png"} alt="ice assets" width={2000} height={2000} className="w-full h-auto object-cover rounded-xl" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Menu Sign + Ice Designs</h2>
                             <p className="pt-4"></p>
                         </div>
@@ -40,7 +40,7 @@ const FlappyPenguin = () => {
                     
                     <FadeInSection>
                         <div className=" px-4 w-full lg:w-[1000px] aspect-auto mx-auto">
-                            <Image src={"/flappy-bg.png"} alt="background" width={1000} height={1000} className="w-full h-auto object-cover" />
+                            <Image src={"/flappy-bg.png"} alt="background" width={1000} height={1000} className="w-full h-auto object-cover rounded-xl" />
                             <h2 className="font-normal pt-8 text-2xl text-center">Simple background that can be looped</h2>
                             <p className="pt-4"></p>
                         </div>
