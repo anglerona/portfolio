@@ -69,13 +69,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   />
                 </div>
               </div>
-              <h3 className="hidden lg:block text-xl lg:pl-20 md:text-3xl font-bold text-white">
+              <h3 className="hidden lg:block text-xl pl-4 lg:pl-20 md:text-3xl font-bold text-white">
                 {item.title}
               </h3>
             </div>
 
             {/* Content Section */}
-            <div className="relative pl-14 pr-4 justi lg:pl-4 w-full">
+            <div className="relative pl-14 pr-4 lg:pl-4 w-full">
               <h3 className="lg:hidden block text-xl md:text-3xl  mb-4 text-left font-bold text-white">
                 {item.title}
               </h3>
