@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -31,7 +27,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
 
-  const circleProgress = data.map((_, index) =>
+  // Precompute the circle progress hooks to avoid calling hooks inside a callback
+  const circleProgresses = data.map((_, index) =>
     useTransform(
       scrollYProgress,
       [index / data.length, (index + 1) / data.length],
@@ -49,7 +46,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
       <div ref={ref} className="relative max-w-7xl space-y-20 mx-auto pt-20">
         {data.map((item, index) => (
-          <div key={index} className={`flex justify-center pb-32 ${index < data.length - 1 ? "md:pb-48" : "pb-20"}`}>
+          <div
+            key={index}
+            className={`flex justify-center pb-32 ${
+              index < data.length - 1 ? "md:pb-48" : "pb-20"
+            }`}
+          >
             {/* Sticky title and circle */}
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-32 self-start max-w-xs lg:max-w-sm md:w-full">
               <div
@@ -63,25 +65,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   {/* Fill Animation */}
                   <motion.div
                     style={{
-                      scale: circleProgress[index],
+                      scale: circleProgresses[index], // Use precomputed hook
                     }}
                     className="h-4 w-4 rounded-full bg-[#D2B5F9]"
                   />
                 </div>
               </div>
-              <h3 className="hidden lg:block text-xl pl-4 lg:pl-20 md:text-3xl font-bold text-white">
+              <h3 className="hidden lg:block text-xl lg:pl-20 md:text-3xl font-bold text-white">
                 {item.title}
               </h3>
             </div>
 
             {/* Content Section */}
             <div className="relative pl-14 pr-4 lg:pl-4 w-full">
-              <h3 className="lg:hidden block text-xl md:text-3xl  mb-4 text-left font-bold text-white">
+              <h3 className="lg:hidden block text-xl md:text-3xl mb-4 text-left font-bold text-white">
                 {item.title}
               </h3>
-              <div>
-              {item.content}
-              </div>
+              <div>{item.content}</div>
             </div>
           </div>
         ))}
