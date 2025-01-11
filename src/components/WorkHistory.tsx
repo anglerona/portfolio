@@ -23,7 +23,7 @@ export function WorkHistory() {
             Tech Stack
           </h4>
           <div className="flex flex-wrap gap-2 mt-4">
-            {["Next.js", "TailwindCSS", "RapidAPI", "BitBucket"].map((tech) => (
+            {["Next.js", "React.js", "TypeScript", "TailwindCSS", "RapidAPI", "BitBucket"].map((tech) => (
               <Badge key={tech} label={tech} variant="outlined" />
             ))}
           </div>
@@ -51,6 +51,7 @@ export function WorkHistory() {
             {[
               "Laravel",
               "JavaScript",
+              "HTML/CSS",
               "PHP",
               "MySQL",
               "BitBucket",
@@ -79,7 +80,7 @@ export function WorkHistory() {
             Tech Stack
           </h4>
           <div className="flex flex-wrap gap-2 mt-4">
-            {["Next.js", "Java Spring", "Selenium", "Postman", "GitLab"].map(
+            {["Next.js", "React.js", "TypeScript", "Java Spring", "Selenium", "Postman", "GitLab"].map(
               (tech) => (
                 <Badge key={tech} label={tech} variant="outlined" />
               )
@@ -106,7 +107,7 @@ export function WorkHistory() {
             Tech Stack
           </h4>
           <div className="flex flex-wrap gap-2 mt-4">
-            {["Next.js", "Java Spring", "Selenium", "Postman", "GitLab"].map(
+            {["Next.js", "React.js", "TypeScript", "Java Spring", "Selenium", "Postman", "GitLab"].map(
               (tech) => (
                 <Badge key={tech} label={tech} variant="outlined" />
               )
