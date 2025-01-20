@@ -23,7 +23,7 @@ export function WorkHistory() {
             Tech Stack
           </h4>
           <div className="flex flex-wrap gap-2 mt-4">
-            {["Next.js", "React.js", "TypeScript", "TailwindCSS", "RapidAPI", "BitBucket"].map((tech) => (
+            {["Next.js", "React.js", "TypeScript", "TailwindCSS", "FastAPI", "BitBucket"].map((tech) => (
               <Badge key={tech} label={tech} variant="outlined" />
             ))}
           </div>
