@@ -10,6 +10,7 @@ const Idek = () => {
       <div className="relative">
         <StarsBackground className="fixed top-0 left-0 w-full h-full z-[-1]" />
         <ShootingStars className="fixed top-0 left-0 w-full h-full z-[-2]" />
+        
 
         <div className="relative text-center z-10">
             <FadeInSection>
@@ -18,6 +19,24 @@ const Idek = () => {
                 </div>
                 <h2 className="py-12 font-semibold text-4xl text-center">idekCTF</h2>
             </FadeInSection>
+
+            <FadeInSection>
+            <div className="w-full pb-20 mx-auto lg:w-[1100px] px-4 aspect-auto">
+              <Image
+                src={"/2025shirt.png"}
+                alt="t-shirt illustration"
+                width={2000}
+                height={2000}
+                className="w-full rounded-xl h-auto object-cover mb-8"
+              />
+              <h2 className="font-normal pt-8 text-2xl text-center">
+                T-shirt Illustration
+              </h2>
+              <p className="pt-4">
+              Used Procreate to illustrate a t-shirt design that includes all the main idek characters
+              </p>
+            </div>
+          </FadeInSection>
 
             <FadeInSection>
             <div className="w-full pb-20 mx-auto lg:w-[1100px] px-4 aspect-auto">
