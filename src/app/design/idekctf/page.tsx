@@ -21,7 +21,7 @@ const Idek = () => {
             </FadeInSection>
 
             <FadeInSection>
-            <div className="w-full pb-20 mx-auto lg:w-[1100px] px-4 aspect-auto">
+            <div className="w-full pb-20 mx-auto lg:w-[1000px] px-4 aspect-auto">
               <Image
                 src={"/2025shirt.png"}
                 alt="t-shirt illustration"
