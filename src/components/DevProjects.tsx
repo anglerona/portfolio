@@ -4,6 +4,15 @@ import FadeInSection from "./FadeInSection";
 
 const projects = [
     {
+        imageHref: "/sasa-lele.png",
+        title: "SASA-LELE",
+        desc: "A full-stack, user-authenticated platform for sales and inventory management with interactive data visualizations for actionable insights.",
+        code: "https://github.com/anglerona/sasa-lele",
+        hasLiveSite: true,
+        link: "https://sasa-lele.vercel.app/",
+        tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS", "Django", "MongoDB"]
+    },
+    {
         imageHref: "/portfolio.png",
         title: "Portfolio Website",
         desc: "The site that you are seeing right now! This site contains my fullstack developer portfolio, as well as my portfolio for design and illustration work.",
