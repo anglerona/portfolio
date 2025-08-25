@@ -3,6 +3,15 @@ import Card from "./Card";
 import FadeInSection from "./FadeInSection";
 
 const projects = [
+     {
+        imageHref: "/alonartanuki.png",
+        title: "alonartanuki",
+        desc: "A portfolio website for my illustrations, keychain art, and sticker art",
+        code: "https://github.com/anglerona/alonartanuki",
+        hasLiveSite: true,
+        link: "https://alonartanuki.vercel.app/",
+        tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS"]
+    },
     {
         imageHref: "/sasa-lele.png",
         title: "SASA-LELE",

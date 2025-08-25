@@ -25,13 +25,13 @@ const Card = ({
 }: CardProps) => {
   return (
     <div className="w-full bg-background max-w-80 min-h-[460px] md:max-w-72 border rounded-xl border-purple-300 transition-shadow duration-500 shadow-[0_0_6px_1px_rgba(212,159,255,1)]">
-      <div className="w-full h-40 overflow-hidden rounded-xl">
+      <div className="w-full h-40 overflow-hidden object-cover rounded-xl">
         <Image
           src={imageHref}
           alt={title}
           width={500}
           height={500}
-          className="object-fit"
+          className="object-cover"
         />
       </div>
       <div className="px-4 space-y-5 text-center py-4">
