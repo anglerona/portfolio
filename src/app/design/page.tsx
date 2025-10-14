@@ -7,6 +7,13 @@ import { StarsBackground } from "@/components/ui/stars-background";
 
 const projects = [
   {
+    name: "Waterloo Quant Club",
+    description: "Designed the UI for the landing page.",
+    imageUrl: "/wqc-website.png",
+    slug: "wqc",
+    tags: ["UI/UX"],
+  },
+  {
     name: "Personal Portfolio",
     description: "Designed the layouts and UI components for a personal portfolio website.",
     imageUrl: "/portfolio.png",
