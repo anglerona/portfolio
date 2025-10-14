@@ -73,7 +73,7 @@ const WQC = () => {
                             Social Media Graphics
                         </h2>
                         <p className="pt-4">
-                        Created graphics to promote the club's first panel event on Instagram and LinkedIn
+                        Created graphics to promote the club&apos;s first panel event on Instagram and LinkedIn
                         </p>
                         </div>
                     </FadeInSection>
