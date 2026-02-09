@@ -81,7 +81,7 @@ const projects = [
   {
     name: "RDG Properties",
     description: "Brand identity refresh for RDG Properties Inc spanning logos, business cards, and real estate signage.",
-    imageUrl: "/rdg.png",
+    imageUrl: "/rdg-cover.png",
     slug: "rdg",
     tags: ["Branding"],
     updatedAt: "2026-02-02",
