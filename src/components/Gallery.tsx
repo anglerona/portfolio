@@ -78,7 +78,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   return (
     <div>
       {/* Responsive Horizontal Scroll on Mobile, Grid on Larger Screens */}
-      <div className="flex lg:grid lg:grid-cols-3 scrollbar-hide gap-4 items-start overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap">
+      <div className="flex lg:grid lg:grid-cols-3 scrollbar-hide gap-4 items-center overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap">
         {images.map((image, index) => (
           <div
             key={index}

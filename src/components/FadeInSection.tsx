@@ -4,15 +4,21 @@ import React, { ReactNode } from "react";
 
 interface FadeInSectionProps {
   children: ReactNode;
-  immediate?: boolean; // Add immediate prop
+  immediate?: boolean;
+  className?: string;
 }
 
-const FadeInSection: React.FC<FadeInSectionProps> = ({ children, immediate = false }) => {
+const FadeInSection: React.FC<FadeInSectionProps> = ({
+  children,
+  immediate = false,
+  className = "",
+}) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: immediate ? 0 : 50 }} // If immediate, don't shift down
-      animate={{ opacity: 1, y: 0 }} // Always animate to visible
-      viewport={immediate ? undefined : { once: true, amount: 0.2 }} // Skip viewport triggering if immediate
+      className={className}
+      initial={{ opacity: 0, y: immediate ? 0 : 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      viewport={immediate ? undefined : { once: true, amount: 0.2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {children}
@@ -21,4 +27,3 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({ children, immediate = fal
 };
 
 export default FadeInSection;
-

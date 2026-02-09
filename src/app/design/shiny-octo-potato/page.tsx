@@ -1,34 +1,66 @@
+"use client";
+
+import FadeInSection from "@/components/FadeInSection";
+import Badge from "@/components/Badge";
 import BackButton from "@/components/BackButton";
-import FadeInSection from "@/components/FadeInSection"
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
-import Image from "next/image";
 
-const ShinyOcto = () => {
-    return (
-        <FadeInSection>
-            <div className="relative">
-                <StarsBackground className="fixed top-0 left-0 w-full h-full z-[-1]" />
-                <ShootingStars className="fixed top-0 left-0 w-full h-full z-[-2]" />
+import ProjectStickyBar from "@/components/ProjectStickyBar";
+import ProjectSection from "@/components/ProjectSection";
+import SoloImage from "@/components/SoloImage";
 
-                <div className="relative text-center z-10">
-                    <div className="w-full pt-12 flex justify-center">
-                        <BackButton />
-                    </div>
-                    <h2 className="py-12 font-semibold text-4xl text-center">Shiny Octo Potato</h2>
-                    <div className="w-full px-4 lg:w-[600px] aspect-auto mx-auto">
-                        <Image src={"/shinyocto.png"} alt="ctf23" width={500} height={500} className="w-full h-auto object-cover" />
-                        <h2 className="font-normal pt-8 text-2xl text-center">Fruit Sprites</h2>
-                        <p className="pt-4">Used Procreate to illustrate 11 game sprites based on the Suika Game fruits.</p>
-                    </div>
-                    <div className="w-full pt-12 flex justify-center">
-                        <BackButton />
-                    </div>
-                </div>
-                <div className="h-28"></div>
-            </div>
+export default function ShinyOctoPotato() {
+  return (
+    <div className="relative">
+      <StarsBackground className="fixed inset-0 z-[-1]" />
+      <ShootingStars className="fixed inset-0 z-[-2]" />
+
+      <div className="relative z-10">
+        <ProjectStickyBar badges={["Digital Assets", "Illustrations"]} />
+
+        {/* Header */}
+        <FadeInSection immediate>
+          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
+            <h1 className="text-4xl font-semibold">Shiny Octo Potato</h1>
+
+            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+              Illustrated a set of fruit sprites for a Suika Game–inspired clone, focusing on
+              clean silhouettes, consistent lighting, and readability at small sizes.
+            </p>
+          </div>
         </FadeInSection>
-    )
-}
 
-export default ShinyOcto;
+        {/* Main */}
+        <ProjectSection eyebrow="Asset Pack" title="Fruit Sprites">
+          <div className="max-w-3xl mx-auto">
+            <SoloImage
+              src="/shinyocto.png"
+              alt="Fruit sprite sheet for Shiny Octo Potato"
+              heightClassName="h-[340px] sm:h-[420px] md:h-[480px]"
+              maxWidthClassName="max-w-3xl"
+              priority
+              // openInNewTab
+            />
+
+            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left">
+              <h3 className="text-lg font-medium">Notes</h3>
+              <p className="mt-3 text-white/75">
+                Created 11 sprites in Procreate based on the Suika fruit progression. The monochrome pink palette was requested by the developer and 
+                gives the game a distinctive identity and reinforces a playful, candy-like tone that fits the stacking chaos.
+              </p>
+            </div>
+          </div>
+        </ProjectSection>
+
+        <FadeInSection>
+          <div className="flex justify-center pb-20">
+            <BackButton />
+          </div>
+        </FadeInSection>
+
+        <div className="h-28" />
+      </div>
+    </div>
+  );
+}

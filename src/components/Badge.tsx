@@ -1,23 +1,35 @@
 import React from "react";
 
 interface BadgeProps {
-  label: string; // Prop to accept a label string
-  variant?: "filled" | "outlined"; // Prop to define the style variant
+  label: string;
+  variant?: "filled" | "outlined" | "glass";
+  className?: string;
 }
 
-const Badge: React.FC<BadgeProps> = ({ label, variant = "filled" }) => {
-  const baseClasses = "rounded-full px-4 py-1 text-xs";
+const Badge: React.FC<BadgeProps> = ({
+  label,
+  variant = "filled",
+  className = "",
+}) => {
+  const baseClasses =
+    "inline-flex items-center rounded-full px-3 py-1 text-xs leading-none select-none";
+
   const filledClasses = "bg-[#482F54] text-purple-200";
-  const outlinedClasses = "border border-white text-white bg-transparent";
+  const outlinedClasses = "border border-white/70 text-white bg-transparent";
+  const glassClasses =
+    "border border-white/15 text-white/80 bg-black/35 backdrop-blur-sm";
+
+  const variantClasses =
+    variant === "outlined"
+      ? outlinedClasses
+      : variant === "glass"
+        ? glassClasses
+        : filledClasses;
 
   return (
-    <div
-      className={`${baseClasses} ${
-        variant === "outlined" ? outlinedClasses : filledClasses
-      }`}
-    >
+    <span className={`${baseClasses} ${variantClasses} ${className}`}>
       {label}
-    </div>
+    </span>
   );
 };
 
