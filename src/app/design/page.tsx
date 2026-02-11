@@ -104,7 +104,7 @@ const Design = () => {
 
       <div className="relative z-10">
         <Navbar pageType="design" />
-        <div className="h-28"></div>
+        <div className="h-4"></div>
 
         {/* Pass all projects to MasonryGrid */}
         <MasonryGrid projects={projects} />

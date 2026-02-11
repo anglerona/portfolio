@@ -1,39 +1,21 @@
-import { FloatingNav } from "@/components/ui/floating-navbar";
+"use client";
+
+import SiteStickyNav from "@/components/SiteStickyNav";
 
 interface NavbarProps {
-  pageType: "dev" | "design"; // Define the prop to indicate the page type
+  pageType: "dev" | "design";
 }
 
 const Navbar = ({ pageType }: NavbarProps) => {
   const basePath = pageType === "dev" ? "/dev" : "/design";
 
-  // Conditionally include the "Work" button if the pageType is "dev"
   const navItems = [
-   
-    {
-      name: "Projects",
-      link: `${basePath}/#projects`,
-    },
-    ...(pageType === "dev"
-      ? [
-          {
-            name: "Work",
-            link: `${basePath}/#work`,
-          },
-        ]
-      : []),
-    
-    {
-      name: "Contact",
-      link: `${basePath}/#contact`,
-    },
+    { name: "Projects", link: `${basePath}/#projects` },
+    ...(pageType === "dev" ? [{ name: "Work", link: `${basePath}/#work` }] : []),
+    { name: "Contact", link: `${basePath}/#contact` },
   ];
 
-  return (
-    <div>
-      <FloatingNav navItems={navItems} pageType={pageType} />
-    </div>
-  );
+  return <SiteStickyNav navItems={navItems} pageType={pageType} />;
 };
 
 export default Navbar;

@@ -14,7 +14,7 @@ const Dev = () => {
 
             <div className="relative z-10">
                 <Navbar pageType="dev" />
-                <div className="h-28"></div>
+                <div className="h-4"></div>
                 
                 <DevProjects />
                 <WorkHistory />

@@ -3,15 +3,15 @@ import Card from "./Card";
 import FadeInSection from "./FadeInSection";
 
 const projects = [
-     {
-        imageHref: "/alonartanuki.png",
-        title: "alonartanuki",
-        desc: "A portfolio website for my illustrations, keychain art, and sticker art",
-        code: "https://github.com/anglerona/alonartanuki",
-        hasLiveSite: true,
-        link: "https://alonartanuki.vercel.app/",
-        tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS"]
-    },
+    //  {
+    //     imageHref: "/alonartanuki.png",
+    //     title: "alonartanuki",
+    //     desc: "A portfolio website for my illustrations, keychain art, and sticker art",
+    //     code: "https://github.com/anglerona/alonartanuki",
+    //     hasLiveSite: true,
+    //     link: "https://alonartanuki.vercel.app/",
+    //     tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS"]
+    // },
     {
         imageHref: "/sasa-lele.png",
         title: "SASA-LELE",
@@ -24,7 +24,7 @@ const projects = [
     {
         imageHref: "/portfolio.png",
         title: "Portfolio Website",
-        desc: "The site that you are seeing right now! This site contains my fullstack developer portfolio, as well as my portfolio for design and illustration work.",
+        desc: "The site that you are seeing right now! This site contains my developer portfolio, as well as my portfolio for design work.",
         code: "https://github.com/anglerona/portfolio",
         hasLiveSite: true,
         link: "https://anglerona.vercel.app/",
@@ -32,26 +32,8 @@ const projects = [
     },
     {
         imageHref: "/goose.png",
-        title: "Link-branch",
-        desc: "A Linktree clone that combines multiple separate links into one customizable profile page",
-        code: "https://github.com/anglerona/link-branch",
-        hasLiveSite: false,
-        link: "https://github.com/anglerona",
-        tools: ["JavaScript", "ReactJS", "NextJS", "MongoDB", "TailwindCSS", "AWS S3"]
-    },
-    {
-        imageHref: "/fabricate.png",
-        title: "Fabricate",
-        desc: "A text prompt-based web app that combines five different AI tools: image generation, music, videos, code snippets, and conversations.",
-        code: "https://github.com/anglerona/fabricate",
-        hasLiveSite: true,
-        link: "https://fabricate-chi.vercel.app/",
-        tools: ["TypeScript", "ReactJS", "NextJS", "MongoDB", "TailwindCSS", "OpenAI", "Replicate", "Clerk"]
-    },
-    {
-        imageHref: "/goose.png",
         title: "BulbasaurBot",
-        desc: " Arduino robot with a sunlight-seeking system to transport a plant and keep it under sunlight.",
+        desc: "Self-driving Arduino robot with a sunlight-seeking system and screen to display plant stats.",
         code: "https://github.com/anglerona/bulbasaurBot",
         hasLiveSite: false,
         link: "github.com/anglerona",
