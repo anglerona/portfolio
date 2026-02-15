@@ -3,15 +3,15 @@ import Card from "./Card";
 import FadeInSection from "./FadeInSection";
 
 const projects = [
-    //  {
-    //     imageHref: "/alonartanuki.png",
-    //     title: "alonartanuki",
-    //     desc: "A portfolio website for my illustrations, keychain art, and sticker art",
-    //     code: "https://github.com/anglerona/alonartanuki",
-    //     hasLiveSite: true,
-    //     link: "https://alonartanuki.vercel.app/",
-    //     tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS"]
-    // },
+     {
+        imageHref: "/goose.png",
+        title: "Manga-Bot",
+        desc: "Discord bot that tracks manga chapter releases and posts automated updates using Python and async web scraping.",
+        code: "https://github.com/anglerona/manga-discord-bot",
+        hasLiveSite: false,
+        link: "https://github.com/anglerona/manga-discord-bot",
+        tools: ["Python", "Discord API"]
+    },
     {
         imageHref: "/sasa-lele.png",
         title: "SASA-LELE",
