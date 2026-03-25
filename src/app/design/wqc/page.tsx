@@ -15,6 +15,7 @@ import BackButton from "@/components/BackButton";
 
 // Branding
 const logos = ["/wqc-logo.png", "/wqc-logo-full.png"];
+const assetsSheet = ["/wqc-assets-sheet.png"];
 
 // Winter 2026
 const winterStyleGuide = ["/wqc-styleguide.png"];
@@ -24,8 +25,18 @@ const winterInstagram = [
   "/wqc-winter-ig-3.png",
   "/wqc-winter-ig-4.png",
   "/wqc-winter-ig-5.png",
+  "/wqc-winter-ig-6.png",
 ];
-const winterPoster = ["/wqc-winter-poster-1.png", "/wqc-winter-poster-2.png"];
+const winterPoster = [
+  "/wqc-winter-poster-1.png",
+  "/wqc-winter-poster-2.png",
+  "/wqc-winter-poster-3.png",
+];
+
+// Waterloo Trading Competition 2026
+const wtcTokens = ["/wtc-2026-tokens.png"];
+const wtcWelcomeScreen = ["/wtc-2026-welcome-screen.png"];
+const wtcBanner = ["/wtc-2026-banner.png"];
 
 // Fall 2025
 const fallWebsite = [
@@ -65,10 +76,10 @@ export default function WaterlooQuantClub() {
           <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
             <h1 className="text-4xl font-semibold">Waterloo Quant Club</h1>
             <p className="mt-6 text-white/75 max-w-3xl mx-auto">
-              Worked on visual design across branding, UI/UX, and social media for the
-              Waterloo Quant Club. This project includes a full visual rebrand
-              in Winter 2026, transitioning away from the club’s legacy Fall
-              2025 aesthetic.
+              Worked on visual design across branding, UI/UX, and social media
+              for the Waterloo Quant Club. This project includes a full visual
+              rebrand in Winter 2026, transitioning away from the club’s legacy
+              Fall 2025 aesthetic.
             </p>
           </div>
         </FadeInSection>
@@ -85,7 +96,6 @@ export default function WaterlooQuantClub() {
               </p>
 
               <div className="space-y-4">
-                {/* Mark */}
                 <div className="flex justify-center">
                   <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl border border-white/15 bg-black/10 p-4">
                     <Image
@@ -98,7 +108,6 @@ export default function WaterlooQuantClub() {
                   </div>
                 </div>
 
-                {/* Full lockup */}
                 <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
                   <Image
                     src={logos[1]}
@@ -113,11 +122,26 @@ export default function WaterlooQuantClub() {
 
             <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
               <h3 className="font-medium text-lg mb-4">Rebrand Direction</h3>
-              <p className="text-white/75">
+              <p className="text-white/75 mb-6">
                 The Winter 2026 rebrand aimed to move away from a busy,
-                inconsistent visual language toward a more minimal, clean,
-                and modern identity that better reflects quantitative finance.
+                inconsistent visual language toward a more minimal, clean, and
+                modern identity that better reflects quantitative finance.
               </p>
+
+              <div className="space-y-4">
+                <h4 className="font-medium text-base text-center">
+                  Assets Sheet
+                </h4>
+                <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+                  <Image
+                    src={assetsSheet[0]}
+                    alt="Waterloo Quant Club assets sheet"
+                    width={2000}
+                    height={1400}
+                    className="w-full h-auto object-contain rounded-xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </ProjectSection>
@@ -133,7 +157,6 @@ export default function WaterlooQuantClub() {
                 src={winterStyleGuide[0]}
                 alt="Waterloo Quant Club style guide"
                 priority
-                // openInNewTab
               />
             </div>
 
@@ -149,6 +172,56 @@ export default function WaterlooQuantClub() {
                 Event Posters
               </h3>
               <ImageGallery images={winterPoster} />
+            </div>
+          </div>
+        </ProjectSection>
+
+        {/* WATERLOO TRADING COMPETITION 2026 */}
+        <ProjectSection
+          eyebrow="2026 Competition"
+          title="Waterloo Trading Competition"
+        >
+          <div className="space-y-16">
+            <div>
+              <h3 className="text-xl font-medium mb-4 text-center">
+                WQC Tokens
+              </h3>
+              <SoloImage
+                src={wtcTokens[0]}
+                alt="WQC tokens used for the 2026 Waterloo Trading Competition"
+              />
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium mb-6 text-center">
+                Welcome Screen & Banner
+              </h3>
+
+              <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-center">
+                <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+                  <div className="flex justify-center md:h-[360px]">
+                    <Image
+                      src={wtcWelcomeScreen[0]}
+                      alt="Welcome screen page design"
+                      width={1600}
+                      height={1200}
+                      className="h-auto w-full object-contain md:h-full md:w-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+                  <div className="flex justify-center md:h-[360px]">
+                    <Image
+                      src={wtcBanner[0]}
+                      alt="Banner design"
+                      width={1600}
+                      height={1200}
+                      className="h-auto w-full object-contain md:h-full md:w-auto"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </ProjectSection>
