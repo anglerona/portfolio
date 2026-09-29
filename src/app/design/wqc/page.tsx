@@ -104,7 +104,7 @@ export default function WaterlooQuantClub() {
             {/* Description */}
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-white/75">
-                Expanded the club's visual identity with a more playful,
+                Expanded the club&apos;s visual identity with a more playful,
                 game-inspired direction. The new aesthetic uses a primarily
                 greyscale palette paired with dice, playing cards, and other
                 game elements to create a distinct look while keeping the
@@ -155,7 +155,7 @@ export default function WaterlooQuantClub() {
                 layout and clearer visual hierarchy. Replaced the previous boxed
                 layout with a more open design and introduced playing card suits
                 to represent each sponsorship tier, bringing the page in line
-                with the club's new game-inspired aesthetic.
+                with the club&apos;s new game-inspired aesthetic.
               </p>
 
               <ImageGallery images={fall26Sponsors} columns={2} />
