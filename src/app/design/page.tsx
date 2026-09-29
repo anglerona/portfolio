@@ -12,7 +12,7 @@ const projects = [
     imageUrl: "/wqc.png",
     slug: "wqc",
     tags: ["Branding", "Social Media", "UI/UX"],
-    updatedAt: "2026-02-08",
+    updatedAt: "2026-09-28",
   },
   {
     name: "Personal Portfolio",

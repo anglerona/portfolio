@@ -62,6 +62,17 @@ const fallInstagram = [
   "/wqc-fall-ig-5.png",
 ];
 
+const fall26Instagram = [
+  "/wqc_f26_1.png",
+  "/wqc_f26_2.png",
+  "/wqc_f26_3.png",
+  "/wqc_f26_4.png",
+];
+
+const fall26Assets = ["/wqc_f26_assets.png"];
+
+const fall26Sponsors = ["/wqc_sponsors_old.png", "/wqc_sponsors_new.png"];
+
 export default function WaterlooQuantClub() {
   return (
     <div className="relative">
@@ -83,6 +94,74 @@ export default function WaterlooQuantClub() {
             </p>
           </div>
         </FadeInSection>
+
+        {/* FALL 2026 */}
+        <ProjectSection
+          eyebrow="Fall 2026"
+          title="Evolving the Visual Identity"
+        >
+          <div className="space-y-16">
+            {/* Description */}
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-white/75">
+                Expanded the club's visual identity with a more playful,
+                game-inspired direction. The new aesthetic uses a primarily
+                greyscale palette paired with dice, playing cards, and other
+                game elements to create a distinct look while keeping the
+                overall brand clean and cohesive.
+              </p>
+            </div>
+
+            {/* Visual Assets */}
+            <div>
+              <h3 className="text-xl font-medium mb-4 text-center">
+                Visual Assets
+              </h3>
+
+              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+                Created a reusable set of minimal, game-inspired assets to
+                establish a consistent visual language across social media and
+                the website.
+              </p>
+
+              <SoloImage
+                src={fall26Assets[0]}
+                alt="Fall 2026 Waterloo Quant Club visual assets featuring dice and playing cards"
+              />
+            </div>
+
+            {/* Instagram */}
+            <div>
+              <h3 className="text-xl font-medium mb-4 text-center">
+                Instagram Graphics
+              </h3>
+
+              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+                Applied the new visual direction across social media while
+                adapting the system to different events and content.
+              </p>
+
+              <ImageGallery images={fall26Instagram} />
+            </div>
+
+            {/* Sponsors Page */}
+            <div>
+              <h3 className="text-xl font-medium mb-4 text-center">
+                Sponsors Page Redesign
+              </h3>
+
+              <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+                Redesigned the sponsors page with a cleaner, more spacious
+                layout and clearer visual hierarchy. Replaced the previous boxed
+                layout with a more open design and introduced playing card suits
+                to represent each sponsorship tier, bringing the page in line
+                with the club's new game-inspired aesthetic.
+              </p>
+
+              <ImageGallery images={fall26Sponsors} columns={2} />
+            </div>
+          </div>
+        </ProjectSection>
 
         {/* BRANDING */}
         <ProjectSection eyebrow="Foundation" title="Brand Identity">

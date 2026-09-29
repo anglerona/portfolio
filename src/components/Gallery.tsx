@@ -2,15 +2,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useSwipeable } from "react-swipeable";
-import Left from "@/assets/left.svg"; 
-import Right from "@/assets/right.svg"; 
+import Left from "@/assets/left.svg";
+import Right from "@/assets/right.svg";
 import X from "@/assets/x.svg";
 
 interface ImageGalleryProps {
   images: string[];
+  columns?: 2 | 3;
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images, columns = 3 }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [transitioning, setTransitioning] = useState<boolean>(false);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -27,7 +28,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     if (selectedIndex !== null && !transitioning) {
       setTransitioning(true);
       setTimeout(() => {
-        const prevIndex = selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
+        const prevIndex =
+          selectedIndex === 0 ? images.length - 1 : selectedIndex - 1;
         setSelectedIndex(prevIndex);
         setTransitioning(false);
       }, 300);
@@ -38,7 +40,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
     if (selectedIndex !== null && !transitioning) {
       setTransitioning(true);
       setTimeout(() => {
-        const nextIndex = selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
+        const nextIndex =
+          selectedIndex === images.length - 1 ? 0 : selectedIndex + 1;
         setSelectedIndex(nextIndex);
         setTransitioning(false);
       }, 300);
@@ -62,7 +65,9 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   }, [selectedIndex]);
 
   // Close modal if clicking outside the image or buttons
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleOverlayClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
     if (e.target === e.currentTarget) {
       closeImage();
     }
@@ -78,7 +83,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   return (
     <div>
       {/* Responsive Horizontal Scroll on Mobile, Grid on Larger Screens */}
-      <div className="flex lg:grid lg:grid-cols-3 scrollbar-hide gap-4 items-center overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap">
+      <div
+        className={`flex lg:grid ${
+          columns === 2 ? "lg:grid-cols-2" : "lg:grid-cols-3"
+        } scrollbar-hide gap-4 items-center overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap`}
+      >
         {images.map((image, index) => (
           <div
             key={index}
@@ -113,9 +122,14 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             <X className="h-4 w-4 md:h-5 md:w-5 fill-current" />
           </button>
 
-          <div className="relative w-full lg:w-auto overflow-hidden" ref={carouselRef}>
+          <div
+            className="relative w-full lg:w-auto overflow-hidden"
+            ref={carouselRef}
+          >
             {/* Image with smooth transition */}
-            <div className={`transition-opacity duration-500 ${transitioning ? "opacity-0" : "opacity-100"}`}>
+            <div
+              className={`transition-opacity duration-500 ${transitioning ? "opacity-0" : "opacity-100"}`}
+            >
               <Image
                 src={images[selectedIndex]}
                 alt={`Image ${selectedIndex}`}
