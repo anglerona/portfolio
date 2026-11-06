@@ -17,7 +17,7 @@ export const StarOrbit = ({
     return (
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <div 
-                className={twMerge( "animate-spin")} 
+                className={twMerge( "animate-spin motion-reduce:animate-none")} 
                 style={{
                     animationDuration: orbitDuration,
                 }}
@@ -31,7 +31,7 @@ export const StarOrbit = ({
                     }}
                 >
                     <div 
-                        className={twMerge( "animate-spin")} 
+                        className={twMerge( "animate-spin motion-reduce:animate-none")} 
                         style={{
                             animationDuration: spinDuration,
                         }}

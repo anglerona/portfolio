@@ -12,19 +12,19 @@ import SoloImage from "@/components/SoloImage";
 import ImageGallery from "@/components/Gallery";
 
 const banners = [
-  "/veria-banner-day.png",
-  "/veria-banner-night.png",
-  "/veria-banner-sunset.png",
+  "/veria-banner-day.webp",
+  "/veria-banner-night.webp",
+  "/veria-banner-sunset.webp",
 ];
 
 const flowers = [
-  "/veria-flower-1.png",
-  "/veria-flower-2.png",
-  "/veria-flower-3.png",
-  "/veria-flower-4.png",
+  "/veria-flower-1.webp",
+  "/veria-flower-2.webp",
+  "/veria-flower-3.webp",
+  "/veria-flower-4.webp",
 ];
 
-const timesSquare = "/veria-times-square.png";
+const timesSquare = "/veria-times-square.webp";
 
 export default function VeriaLabs() {
   return (
@@ -32,7 +32,7 @@ export default function VeriaLabs() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Illustrations", "Digital Assets"]} />
 
         {/* Header */}
@@ -70,7 +70,7 @@ export default function VeriaLabs() {
               />
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 text-center">
+            <div className="border border-white/15 bg-black/10 p-6 text-center">
               <p className="text-white/75 max-w-3xl mx-auto">
                 Created day/night banner variants designed to feel native in both light and dark
                 mode while maintaining consistent composition and brand tone.
@@ -96,7 +96,7 @@ export default function VeriaLabs() {
               request, intended for use across the website and promotional materials.
             </p>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+            <div>
               <ImageGallery images={flowers} />
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function VeriaLabs() {
               priority
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-center">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-center">
               <p className="text-white/75 max-w-3xl mx-auto">
                 A fun milestone: seeing my flower illustrations displayed on a Times Square
                 billboard as part of Veria Labs’ promotional rollout.
@@ -129,7 +129,7 @@ export default function VeriaLabs() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

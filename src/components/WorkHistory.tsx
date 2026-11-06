@@ -6,7 +6,7 @@ import Badge from "@/components/Badge";
 export function WorkHistory() {
   const data = [
     {
-      title: "Jan 2026 - Present",
+      title: "Jan - Aug 2026",
       content: (
         <div className="flex flex-col items-start lg:items-center">
           <Image
@@ -14,7 +14,7 @@ export function WorkHistory() {
             alt="Clio Logo"
             width={400}
             height={400}
-            className="rounded-lg object-cover h-auto max-w-[200px] md:max-w-[400px] "
+            className="object-cover h-auto max-w-[200px] md:max-w-[400px]"
           />
           <p className="text-white text-xl font-semibold mt-4 text-left md:text-center">
             Software Developer Intern
@@ -39,7 +39,7 @@ export function WorkHistory() {
             alt="Qualifacts Logo"
             width={400}
             height={400}
-            className="rounded-lg object-cover h-auto max-w-[200px] md:max-w-[400px] border-8 border-white"
+            className="object-cover h-auto max-w-[200px] md:max-w-[400px] border-8 border-white"
           />
           <p className="text-white text-xl font-semibold mt-4 text-left md:text-center">
             Full Stack Developer Intern
@@ -64,7 +64,7 @@ export function WorkHistory() {
             alt="Genellipse Logo"
             width={400}
             height={400}
-            className="rounded-lg object-cover h-auto max-w-[200px] md:max-w-[400px]"
+            className="object-cover h-auto max-w-[200px] md:max-w-[400px]"
           />
           <p className="text-white text-xl font-semibold mt-4 text-left md:text-center">
             Full Stack Developer Intern
@@ -89,7 +89,7 @@ export function WorkHistory() {
             alt="Applied AI Logo"
             width={400}
             height={400}
-            className="rounded-lg object-cover h-auto max-w-[200px] md:max-w-[400px]"
+            className="object-cover h-auto max-w-[200px] md:max-w-[400px]"
           />
           <p className="text-white text-xl font-semibold mt-4 text-left md:text-center">
             Junior Full Stack Developer Intern
@@ -121,7 +121,7 @@ export function WorkHistory() {
             alt="OpenText Logo"
             width={400}
             height={400}
-            className="rounded-lg object-cover h-auto max-w-[200px] md:max-w-[400px]"
+            className="object-cover h-auto max-w-[200px] md:max-w-[400px]"
           />
           <p className="text-white text-xl font-semibold mt-4 text-left md:text-center">
             Software Developer Intern
@@ -148,7 +148,7 @@ export function WorkHistory() {
             alt="OpenText Logo"
             width={400}
             height={400}
-            className="rounded-lg object-cover h-auto max-w-[200px] md:max-w-[400px]"
+            className="object-cover h-auto max-w-[200px] md:max-w-[400px]"
           />
           <p className="text-white text-xl font-semibold mt-4 text-left md:text-center">
             Software Developer Intern
@@ -169,7 +169,7 @@ export function WorkHistory() {
   ];
 
   return (
-    <div id="work" className="w-full">
+    <div id="work" className="w-full scroll-mt-20">
       <Timeline data={data} />
     </div>
   );

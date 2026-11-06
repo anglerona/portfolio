@@ -56,6 +56,7 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout>;
     const createStar = () => {
       const { x, y, angle } = getRandomStartPoint();
       const newStar: ShootingStar = {
@@ -70,12 +71,13 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
       setStar(newStar);
 
       const randomDelay = Math.random() * (maxDelay - minDelay) + minDelay;
-      setTimeout(createStar, randomDelay);
+      timeoutId = setTimeout(createStar, randomDelay);
     };
 
     createStar();
 
-    return () => {};
+    // Stop the spawn loop when the page unmounts (it used to keep running forever).
+    return () => clearTimeout(timeoutId);
   }, [minSpeed, maxSpeed, minDelay, maxDelay]);
 
   useEffect(() => {
@@ -117,7 +119,8 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   return (
     <svg
       ref={svgRef}
-      className={cn("w-full h-full absolute inset-0", className)}
+      className={cn("w-full h-full absolute inset-0", className, "motion-reduce:hidden")}
+      aria-hidden="true"
     >
       {star && (
         <rect

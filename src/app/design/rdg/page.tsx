@@ -3,6 +3,7 @@
 import FadeInSection from "@/components/FadeInSection";
 import Badge from "@/components/Badge";
 import BackButton from "@/components/BackButton";
+import Image from "next/image";
 import ImageGallery from "@/components/Gallery";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
@@ -11,16 +12,16 @@ import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
-const oldLogo = "/rdg-old-logo.png";
+const oldLogo = "/rdg-old-logo.webp";
 
-const shortRIdeas = "/rdg-r-ideas.png";
+const shortRIdeas = "/rdg-r-ideas.webp";
 const fullLogoIdeas = "/rdg-full-logo-ideas.png";
 
 const finalShortR = "/rdg-final-r.png";
 const finalFullLogo = "/rdg-final-rdg.png";
 
-const cardIdeas = "/rdg-business-card-ideas.png";
-const finalCardFrontBack = "/rdg-business-card-final.png";
+const cardIdeas = "/rdg-business-card-ideas.webp";
+const finalCardFrontBack = "/rdg-business-card-final.webp";
 
 const signs = [
   "/rdg-for-sale-sign.png",
@@ -34,7 +35,7 @@ export default function RDGProperties() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Branding", "Logo Design", "Signage"]} />
 
         {/* Header */}
@@ -67,7 +68,7 @@ export default function RDGProperties() {
               // openInNewTab
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
               <h3 className="text-lg font-medium">Why a refresh</h3>
               <p className="mt-3 text-white/75">
                 The legacy logo didn’t scale cleanly across print and signage. The refresh focused
@@ -116,16 +117,20 @@ export default function RDGProperties() {
         {/* FINAL LOGOS */}
         <ProjectSection eyebrow="Final" title="Logo System">
           <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2 items-start">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 h-full">
+            <div className="border border-white/15 bg-black/10 p-6 h-full">
               <h3 className="text-lg font-medium text-center mb-5">Short Logo</h3>
 
               <div className="flex justify-center">
-                <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl border border-white/15 bg-black/10 p-5">
-                  <img
-                    src={finalShortR}
-                    alt="Final shortened R logo"
-                    className="w-full h-full object-contain"
-                  />
+                <div className="w-36 h-36 sm:w-44 sm:h-44 p-5">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={finalShortR}
+                      alt="Final shortened R logo"
+                      fill
+                      sizes="136px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -135,7 +140,7 @@ export default function RDGProperties() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 h-full">
+            <div className="border border-white/15 bg-black/10 p-6 h-full">
               <h3 className="text-lg font-medium text-center mb-5">Full Logo</h3>
 
               <SoloImage
@@ -179,7 +184,7 @@ export default function RDGProperties() {
                 alt="Final business card front and back"
                 maxWidthClassName="max-w-5xl"
               />
-              <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+              <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
                 <h4 className="text-lg font-medium">Layout rationale</h4>
                 <p className="mt-3 text-white/75">
                   Emphasized a clear hierarchy: brand first, then name, then contact details.
@@ -200,7 +205,7 @@ export default function RDGProperties() {
               (“For Sale”, “Open House”, “For Lease”) remain instantly scannable from the street.
             </p>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+            <div>
               <ImageGallery images={signs} />
             </div>
           </div>
@@ -213,7 +218,7 @@ export default function RDGProperties() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

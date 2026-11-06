@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import grain from "@/assets/grain.jpg"
 import StarIcon from "@/assets/star.svg"
@@ -8,11 +7,10 @@ import Button from "@/components/Button";
 import { StarOrbit } from "@/components/StarOrbit";
 import FadeInSection from "@/components/FadeInSection";
 import { StarsBackground } from "@/components/ui/stars-background";
-import { ShootingStars } from "@/components/ui/shooting-stars";
 
 export default function Home() {
   return (
-    <div className="bg-background h-screen w-full relative overflow-clip">
+    <main className="bg-background min-h-screen w-full relative overflow-clip">
       {/* <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]"> */}
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `url(${grain.src})`
@@ -80,18 +78,19 @@ export default function Home() {
           <StarIcon className="size-28 text-purple-300" />
         </StarOrbit>
       {/* </div> */}
-      <div className="relative z-10 flex items-center justify-center h-full">
+      <div className="relative z-10 flex items-center justify-center min-h-screen py-12">
         <FadeInSection>
           <div className="text-center max-w-md mx-auto">
             <Image
               className="rounded-full mx-auto"
               src="/goose.png"
-              alt="goose"
+              alt=""
+              priority
               width={128}
               height={128}
             />
             <div className="px-4 py-8">
-              <h2 className="font-semibold pb-4 text-4xl">Hi, I&apos;m Angelina</h2>
+              <h1 className="font-semibold pb-4 text-4xl">Hi, I&apos;m Angelina</h1>
               <p className="">
                 I&apos;m a software engineering student @ uWaterloo and I also do
                 freelance design/illustration work. <br /> Thanks for stopping by!
@@ -105,6 +104,6 @@ export default function Home() {
         </FadeInSection>
       </div>
       
-    </div>
+    </main>
   );
 }

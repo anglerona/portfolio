@@ -10,9 +10,9 @@ import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
-const sketchesSheet = "/ottersec-pin-sketches.png";
-const colorVariationsSheet = "/ottersec-pin-color-variants.png";
-const crossAttemptsSheet = "/ottersec-cross-attempts.png";
+const sketchesSheet = "/ottersec-pin-sketches.webp";
+const colorVariationsSheet = "/ottersec-pin-color-variants.webp";
+const crossAttemptsSheet = "/ottersec-cross-attempts.webp";
 const finalPinDesign = "/ottersec-final-pin.png";
 
 export default function OtterSec() {
@@ -21,7 +21,7 @@ export default function OtterSec() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Merch"]} />
 
         {/* Header */}
@@ -53,7 +53,7 @@ export default function OtterSec() {
               // openInNewTab
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
               <h3 className="text-lg font-medium">Design intent</h3>
               <p className="mt-3 text-white/75">
                 Kept the shapes bold and simple for a small physical pin, with a friendly,
@@ -121,7 +121,7 @@ export default function OtterSec() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

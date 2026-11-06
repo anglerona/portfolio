@@ -22,36 +22,36 @@ export default function SoloImage({
   openInNewTab = false,
   caption,
 }: SoloImageProps) {
-  const Wrapper = ({ children }: { children: React.ReactNode }) =>
-    openInNewTab ? (
-      <a href={src} target="_blank" rel="noreferrer" className="block">
-        {children}
-      </a>
-    ) : (
-      <>{children}</>
-    );
+  const frame = (
+    <div
+      className={[
+        "relative flex items-center justify-center",
+        "border border-white/15 bg-black/10",
+        heightClassName,
+        openInNewTab ? "cursor-zoom-in" : "",
+      ].join(" ")}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={2400}
+        height={1600}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        className="h-full w-auto object-contain"
+        priority={priority}
+      />
+    </div>
+  );
 
   return (
     <div className={`mx-auto flex justify-center ${maxWidthClassName}`}>
-      <Wrapper>
-        <div
-          className={[
-            "relative flex items-center justify-center",
-            "rounded-2xl border border-white/15 bg-black/10",
-            heightClassName,
-            openInNewTab ? "cursor-zoom-in" : "",
-          ].join(" ")}
-        >
-          <Image
-            src={src}
-            alt={alt}
-            width={2400}
-            height={1600}
-            className="h-full w-auto object-contain"
-            priority={priority}
-          />
-        </div>
-      </Wrapper>
+      {openInNewTab ? (
+        <a href={src} target="_blank" rel="noreferrer" className="block">
+          {frame}
+        </a>
+      ) : (
+        frame
+      )}
 
       {caption && (
         <p className="text-center text-white/60 text-sm mt-3">{caption}</p>

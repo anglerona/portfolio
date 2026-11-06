@@ -10,12 +10,12 @@ import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 import Image from "next/image";
 
-const initialSketch = "/flappy-initial-sketch.png";
+const initialSketch = "/flappy-initial-sketch.webp";
 const playerSpriteSheet = "/flappy-sprite-sheet.png";
-const titleScreen = "/flappy-title-screen.png";
-const assetsSheet = "/flappy-assets-sheet.png";
-const titleIdeas = "/flappy-title-ideas.png";
-const mockup = "/flappy-mockup.png";
+const titleScreen = "/flappy-title-screen.webp";
+const assetsSheet = "/flappy-assets-sheet.webp";
+const titleIdeas = "/flappy-title-ideas.webp";
+const mockup = "/flappy-mockup.webp";
 
 export default function FlappyPenguin() {
   return (
@@ -23,7 +23,7 @@ export default function FlappyPenguin() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Digital Assets", "Illustrations"]} />
 
         <FadeInSection immediate>
@@ -65,7 +65,7 @@ export default function FlappyPenguin() {
         {/* Player sprite sheet */}
         <ProjectSection eyebrow="Character" title="Player Sprite Sheet">
           <div className="grid gap-8 md:grid-cols-2 items-start">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 text-left h-full">
+            <div className="border border-white/15 bg-black/10 p-6 text-left h-full">
               <h3 className="text-lg font-medium">Sprite decisions</h3>
               <p className="mt-3 text-white/75">
                 Explored two penguin designs with subtle frame-to-frame changes
@@ -113,7 +113,7 @@ export default function FlappyPenguin() {
               />
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 text-left h-full">
+            <div className="border border-white/15 bg-black/10 p-6 text-left h-full">
               <h3 className="text-lg font-medium">UI goals</h3>
               <ul className="mt-3 text-white/75 space-y-2 list-disc list-inside">
                 <li>Bold title-first visual hierarchy</li>
@@ -152,7 +152,7 @@ export default function FlappyPenguin() {
             // openInNewTab
           />
 
-          <div className="mt-10 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-5xl mx-auto">
+          <div className="mt-10 border border-white/15 bg-black/10 p-6 text-left max-w-5xl mx-auto">
             <h3 className="text-lg font-medium">
               What I’d add next
             </h3>
@@ -171,7 +171,7 @@ export default function FlappyPenguin() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

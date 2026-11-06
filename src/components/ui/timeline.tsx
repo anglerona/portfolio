@@ -13,12 +13,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
 
+  // Re-measure whenever the content resizes (e.g. logos finish loading,
+  // text re-wraps on rotate) so the progress line spans the whole timeline.
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+    const el = ref.current;
+    if (!el) return;
+    const update = () => setHeight(el.getBoundingClientRect().height);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -45,7 +50,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             {/* Circle and Sticky Title */}
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-[#0B0111] flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-[#0B0111]  border-2 border-purple-300  p-2" />
+                <div className="h-4 w-4 rounded-full bg-[#0B0111] border-2 border-purple-300 p-2" />
               </div>
               <h3 className="hidden lg:block text-xl md:pl-20 md:text-3xl font-bold text-white ">
                 {item.title}
@@ -74,7 +79,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-200 via-purple-300 to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-purple-200 via-purple-300 to-transparent from-[0%] via-[10%]"
           />
         </div>
       </div>
