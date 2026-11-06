@@ -10,14 +10,14 @@ import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
-const shirt2025 = "/2025shirt.png";
-const promoArt2025 = "/idek2025.png";
+const shirt2025 = "/2025shirt.webp";
+const promoArt2025 = "/idek2025.webp";
 
 const beachPages2025 = [
-  "/idek_2025_beach_1.png",
-  "/idek_2025_beach_2.png",
-  "/idek_2025_beach_3.png",
-  "/idek_2025_beach_4.png",
+  "/idek_2025_beach_1.webp",
+  "/idek_2025_beach_2.webp",
+  "/idek_2025_beach_3.webp",
+  "/idek_2025_beach_4.webp",
 ];
 
 const cafePagesUnused2025 = [
@@ -26,23 +26,23 @@ const cafePagesUnused2025 = [
   "/idek_2025_cafe_3.png",
 ];
 
-const bannersDayNight = ["/Day.png", "/Night.png"];
+const bannersDayNight = ["/Day.webp", "/Night.webp"];
 
-const sponsorChalkboard = "/sponsorship-chalkboard.png";
-const sponsorCircusUnused = "/sponsorship-circus-unused.png";
+const sponsorChalkboard = "/sponsorship-chalkboard.webp";
+const sponsorCircusUnused = "/sponsorship-circus-unused.webp";
 
-const promoPoster2024 = "/idek2024-poster.png";
+const promoPoster2024 = "/idek2024-poster.webp";
 
-const defcon32Banner = "/defcon32-banner.png";
+const defcon32Banner = "/defcon32-banner.webp";
 
-const retroAssetsSheet = "/idek-retro-assets.png";
+const retroAssetsSheet = "/idek-retro-assets.webp";
 
 const stickers = [
-  { src: "/goose.jpg", alt: "Goose sticker" },
-  { src: "/egg.jpg", alt: "Egg sticker" },
-  { src: "/octopus.jpg", alt: "Octopus sticker" },
-  { src: "/cactus.jpg", alt: "Cactus sticker" },
-  { src: "/girl.jpg", alt: "Anime girl sticker" },
+  { src: "/goose.webp", alt: "Goose sticker" },
+  { src: "/egg.webp", alt: "Egg sticker" },
+  { src: "/octopus.webp", alt: "Octopus sticker" },
+  { src: "/cactus.webp", alt: "Cactus sticker" },
+  { src: "/girl.webp", alt: "Anime girl sticker" },
 ];
 
 export default function IdekCTF() {
@@ -51,7 +51,7 @@ export default function IdekCTF() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Merch", "Digital Assets", "Illustrations", "UI/UX"]} />
 
         <FadeInSection immediate>
@@ -75,7 +75,7 @@ export default function IdekCTF() {
 
         <ProjectSection eyebrow="2025" title="Promo & Merch">
           <div className="grid gap-10 lg:grid-cols-2 items-start">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-lg font-medium text-center mb-5">
                 T-shirt Design
               </h3>
@@ -92,7 +92,7 @@ export default function IdekCTF() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 h-full">
+            <div className="border border-white/15 bg-black/10 p-6 h-full">
               <h3 className="text-lg font-medium text-center mb-5">
                 2025 Promotional Art
               </h3>
@@ -111,7 +111,7 @@ export default function IdekCTF() {
 
         <ProjectSection eyebrow="2025" title="Competition Website Concepts">
           <div className="max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-xl font-medium text-center mb-4">
                 Beach Theme (Selected)
               </h3>
@@ -121,12 +121,12 @@ export default function IdekCTF() {
                 readable for fast scanning during gameplay.
               </p>
 
-              <div className="rounded-2xl border border-white/10 bg-black/10 p-3">
+              <div>
                 <ImageGallery images={beachPages2025} />
               </div>
             </div>
 
-            <div className="mt-10 rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="mt-10 border border-white/15 bg-black/10 p-6">
               <h3 className="text-xl font-medium text-center mb-4">
                 Cafe Theme (Unused Exploration)
               </h3>
@@ -136,7 +136,7 @@ export default function IdekCTF() {
                 readability, and overall tone.
               </p>
 
-              <div className="rounded-2xl border border-white/10 bg-black/10 p-3">
+              <div>
                 <ImageGallery images={cafePagesUnused2025} />
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function IdekCTF() {
               />
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 text-center">
+            <div className="border border-white/15 bg-black/10 p-6 text-center">
               <p className="text-white/75 max-w-3xl mx-auto">
                 Illustrated two banner variants depicting a capture-the-flag
                 scene, one for day (light mode) and one for night (dark mode),
@@ -173,7 +173,7 @@ export default function IdekCTF() {
 
         <ProjectSection eyebrow="Print" title="Sponsorship Tier Posters">
           <div className="max-w-5xl mx-auto grid gap-10 lg:grid-cols-2 items-start">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-lg font-medium text-center mb-5">
                 Beach Chalkboard Menu Theme (Final)
               </h3>
@@ -188,7 +188,7 @@ export default function IdekCTF() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6 h-full">
+            <div className="border border-white/15 bg-black/10 p-6 h-full">
               <h3 className="text-lg font-medium text-center mb-5">
                 Circus Theme (Unused)
               </h3>
@@ -212,7 +212,7 @@ export default function IdekCTF() {
               alt="Promotional poster for idekCTF 2024"
               maxWidthClassName="max-w-5xl"
             />
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-center">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-center">
               <p className="text-white/75 max-w-3xl mx-auto">
                 Promotional poster created for idekCTF 2024, used for online
                 announcements and community sharing.
@@ -228,7 +228,7 @@ export default function IdekCTF() {
               alt="DEF CON 32 banner representing multiple CTF teams teaming up"
               maxWidthClassName="max-w-5xl"
             />
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-center">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-center">
               <p className="text-white/75 max-w-3xl mx-auto">
                 Banner designed for DEF CON 32 to represent multiple
                 cybersecurity teams teaming up together.
@@ -245,7 +245,7 @@ export default function IdekCTF() {
               
               maxWidthClassName="max-w-lg"
             />
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-center">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-center">
               <p className="text-white/75 max-w-3xl mx-auto">
                 Created a retro-inspired web asset set used across the
                 competition site and promo materials.
@@ -262,14 +262,14 @@ export default function IdekCTF() {
               intentionally random idekCTF vibe.
             </p>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+            <div>
               <ImageGallery
                 images={[
-                  "/goose.jpg",
-                  "/egg.jpg",
-                  "/octopus.jpg",
-                  "/cactus.jpg",
-                  "/girl.jpg",
+                  "/goose.webp",
+                  "/egg.webp",
+                  "/octopus.webp",
+                  "/cactus.webp",
+                  "/girl.webp",
                 ]}
               />
             </div>
@@ -283,7 +283,7 @@ export default function IdekCTF() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

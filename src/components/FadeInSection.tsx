@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import React, { ReactNode } from "react";
 
 interface FadeInSectionProps {
@@ -13,6 +13,9 @@ const FadeInSection: React.FC<FadeInSectionProps> = ({
   immediate = false,
   className = "",
 }) => {
+  const reduceMotion = useReducedMotion();
+  if (reduceMotion) return <div className={className}>{children}</div>;
+
   return (
     <motion.div
       className={className}

@@ -12,14 +12,15 @@ const Dev = () => {
             <StarsBackground className="fixed top-0 left-0 w-full h-full z-[-1]" />
             <ShootingStars className="fixed top-0 left-0 w-full h-full z-[-2]" />
 
-            <div className="relative z-10">
+            <main className="relative z-10">
+                <h1 className="sr-only">Angelina&apos;s Developer Portfolio</h1>
                 <Navbar pageType="dev" />
                 <div className="h-4"></div>
                 
                 <DevProjects />
                 <WorkHistory />
                 <Contact />
-            </div>
+            </main>
         </div>
     );
 }

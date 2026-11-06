@@ -3,6 +3,7 @@
 import FadeInSection from "@/components/FadeInSection";
 import Badge from "@/components/Badge";
 import BackButton from "@/components/BackButton";
+import Image from "next/image";
 import ImageGallery from "@/components/Gallery";
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
@@ -11,7 +12,7 @@ import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
-const oldLogo = "/bsa-old-logo.png";
+const oldLogo = "/bsa-old-logo.webp";
 
 const logoIdeas = "/bsa-logo-ideas.png";
 
@@ -19,11 +20,11 @@ const finalBLogo = "/bsa-final-b.png";
 const finalLogoLockup = "/bsa-final-lockup.png";
 const wordmarkOnly = "/bsa-wordmark.png";
 
-const colorVariants = "/bsa-color-variants.png";
+const colorVariants = "/bsa-color-variants.webp";
 
 const signage = [
   "/bsa-square-sign.png",
-  "/bsa-units-available-sign.png",
+  "/bsa-units-available-sign.webp",
 ];
 
 export default function BroadwayStoreAll() {
@@ -32,7 +33,7 @@ export default function BroadwayStoreAll() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Branding", "Logo Design", "Signage"]} />
 
         <FadeInSection immediate>
@@ -61,7 +62,7 @@ export default function BroadwayStoreAll() {
               maxWidthClassName="max-w-md"
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
               <h3 className="text-lg font-medium">Why a refresh</h3>
               <p className="mt-3 text-white/75">
                 The owner felt the original logo was too basic and generic, relying heavily on a literal warehouse-and-boxes motif. The 
@@ -90,16 +91,20 @@ export default function BroadwayStoreAll() {
 
         <ProjectSection eyebrow="Final" title="Logo System">
           <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-lg font-medium text-center mb-5">Primary Mark</h3>
 
               <div className="flex justify-center">
-                <div className="w-40 h-40 rounded-2xl border border-white/15 bg-black/10 p-6">
-                  <img
-                    src={finalBLogo}
-                    alt="Final Broadway Store-All B logo"
-                    className="w-full h-full object-contain"
-                  />
+                <div className="w-40 h-40 p-6">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={finalBLogo}
+                      alt="Final Broadway Store-All B logo"
+                      fill
+                      sizes="112px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -109,7 +114,7 @@ export default function BroadwayStoreAll() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-lg font-medium text-center mb-5">Logo Lockup</h3>
 
               <SoloImage
@@ -147,7 +152,7 @@ export default function BroadwayStoreAll() {
               maxWidthClassName="max-w-5xl"
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
               <h3 className="text-lg font-medium">Colour considerations</h3>
               <p className="mt-3 text-white/75">
                 Tested the logo across light and dark backgrounds to ensure consistent contrast and
@@ -160,7 +165,7 @@ export default function BroadwayStoreAll() {
 
         <ProjectSection eyebrow="Large Format" title="Signage Applications">
           <div className="max-w-5xl mx-auto">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-4">
+            <div>
               <ImageGallery images={signage} />
             </div>
           </div>
@@ -173,7 +178,7 @@ export default function BroadwayStoreAll() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

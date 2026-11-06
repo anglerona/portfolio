@@ -13,9 +13,9 @@ import SoloImage from "@/components/SoloImage";
 
 const styleGuide = "/style.png";
 const pages = [
-  "/home.png",
+  "/home.webp",
   "/dev.png",
-  "/design.png",
+  "/design.webp",
   "/designProject1.png",
   "/designProject2.png",
   "/gallery.png",
@@ -27,7 +27,7 @@ export default function Portfolio() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["UI/UX", "Branding"]} />
 
         {/* Header */}
@@ -61,13 +61,13 @@ export default function Portfolio() {
               // openInNewTab
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-3">
+            <div className="mt-8">
               <ImageGallery images={pages} />
             </div>
 
             {/* Notes */}
             <div className="mt-10 grid gap-4 md:grid-cols-3">
-              <div className="md:col-span-2 rounded-2xl border border-white/15 bg-black/10 p-6 text-left">
+              <div className="md:col-span-2 border border-white/15 bg-black/10 p-6 text-left">
                 <h3 className="text-lg font-medium">Design goals</h3>
                 <ul className="mt-3 text-white/75 space-y-2 list-disc list-inside">
                   <li>Make it effortless to switch between Dev and Design portfolios</li>
@@ -76,7 +76,7 @@ export default function Portfolio() {
                 </ul>
               </div>
 
-              <div className="rounded-2xl border border-white/15 bg-black/10 p-6 text-left">
+              <div className="border border-white/15 bg-black/10 p-6 text-left">
                 <h3 className="text-lg font-medium">Deliverables</h3>
                 <ul className="mt-3 text-white/75 space-y-2 list-disc list-inside">
                   <li>Page mockups</li>
@@ -99,7 +99,7 @@ export default function Portfolio() {
               // openInNewTab
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
               <h3 className="text-lg font-medium">What it defined</h3>
               <p className="mt-3 text-white/75">
                 Built a style guide to keep spacing, typography, and component styling
@@ -122,7 +122,7 @@ export default function Portfolio() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

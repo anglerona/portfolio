@@ -25,8 +25,20 @@ function formatDate(iso?: string) {
   if (!iso) return null;
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return null;
-  return d.toLocaleDateString(undefined, { year: "numeric", month: "short" });
+  // Fixed locale + time zone so the server and browser render the same text
+  // (otherwise React throws a hydration error, e.g. "Sep" vs "Sept").
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    timeZone: "UTC",
+  });
 }
+
+const COLUMN_LAYOUTS = [
+  { count: 1, className: "flex md:hidden" },
+  { count: 2, className: "hidden md:flex lg:hidden" },
+  { count: 3, className: "hidden lg:flex" },
+];
 
 export default function MasonryGrid({ projects }: MasonryGridProps) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -71,9 +83,77 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
     }, 220);
   };
 
+  const renderCard = (project: Project) => {
+    const dateLabel = formatDate(project.updatedAt);
+
+    return (
+      <Link
+        key={project.slug}
+        href={`/design/${project.slug}`}
+        className={[
+          "group relative block overflow-hidden",
+          "border border-white/20 bg-black/10 backdrop-blur-sm",
+          "focus:outline-none focus:ring-2 focus:ring-purple-300/60",
+        ].join(" ")}
+        aria-label={`Open project ${project.name}`}
+      >
+        {/* Image keeps natural aspect ratio */}
+        <Image
+          src={project.imageUrl}
+          alt={project.coverAlt ?? project.name}
+          width={2000}
+          height={2000}
+          sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
+          className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03] group-focus-visible:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+        />
+
+        {/* Hover overlay only */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300">
+          {/* darken on hover */}
+          <div className="absolute inset-0 bg-black/70" />
+
+          {dateLabel && (
+            <div className="absolute top-3 right-3">
+              <Badge
+                label={`Updated ${dateLabel}`}
+                variant="glass"
+                className="text-[11px]"
+              />
+            </div>
+          )}
+
+          {/* Title + tags + description */}
+          <div className="absolute inset-x-0 bottom-0 p-4">
+            <h3 className="mb-3 text-xl font-semibold text-white">
+              {project.name}
+            </h3>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((t) => (
+                <Badge
+                  key={`${project.slug}-${t}`}
+                  label={t}
+                  variant="glass"
+                />
+              ))}
+            </div>
+
+            <p className="mt-3 text-sm text-white/85 max-w-[65ch]">
+              {project.description}
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-300 pointer-events-none">
+          <div className="absolute inset-0 border border-white/30" />
+        </div>
+      </Link>
+    );
+  };
+
   return (
     <FadeInSection>
-      <div id="projects" className="pb-12">
+      <div id="projects" className="pb-12 scroll-mt-20">
         <div className="px-4">
           <h2 className="py-10 font-semibold text-4xl text-center">Projects</h2>
 
@@ -120,71 +200,22 @@ export default function MasonryGrid({ projects }: MasonryGridProps) {
           }`}
         >
           <div className="px-4">
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
-              {filtered.map((project) => {
-                const dateLabel = formatDate(project.updatedAt);
-
-                return (
-                  <Link
-                    key={project.slug}
-                    href={`/design/${project.slug}`}
-                    className={[
-                      "group relative block overflow-hidden rounded-2xl",
-                      "border border-white/20 bg-black/10 backdrop-blur-sm",
-                      "mb-4 focus:outline-none focus:ring-2 focus:ring-purple-300/60",
-                    ].join(" ")}
-                    style={{ breakInside: "avoid" }}
-                    aria-label={`Open project ${project.name}`}
-                  >
-                    {/* Image keeps natural aspect ratio */}
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.coverAlt ?? project.name}
-                      width={2000}
-                      height={2000}
-                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
-
-                    {/* Hover overlay only */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {/* darken on hover */}
-                      <div className="absolute inset-0 bg-black/70" />
-
-                      {dateLabel && (
-                        <div className="absolute top-3 right-3">
-                          <Badge
-                            label={`Updated ${dateLabel}`}
-                            variant="glass"
-                            className="text-[11px]"
-                          />
-                        </div>
-                      )}
-
-                      {/* Tags + description */}
-                      <div className="absolute inset-x-0 bottom-0 p-4">
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((t) => (
-                            <Badge
-                              key={`${project.slug}-${t}`}
-                              label={t}
-                              variant="glass"
-                            />
-                          ))}
-                        </div>
-
-                        <p className="mt-3 text-sm text-white/85 max-w-[65ch]">
-                          {project.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <div className="absolute inset-0 rounded-2xl border border-white/30" />
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
+            {/*
+              Deal projects into columns round-robin (1st -> col 1, 2nd -> col 2, ...)
+              so the newest projects fill the top row. One layout per breakpoint;
+              the hidden ones use display:none, so their lazy images never load.
+            */}
+            {COLUMN_LAYOUTS.map(({ count, className }) => (
+              <div key={count} className={`${className} items-start gap-4`}>
+                {Array.from({ length: count }, (_, col) => (
+                  <div key={col} className="flex min-w-0 flex-1 flex-col gap-4">
+                    {filtered
+                      .filter((_, i) => i % count === col)
+                      .map(renderCard)}
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>

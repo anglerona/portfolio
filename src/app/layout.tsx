@@ -5,8 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Angerlona",
-  description: "Portfolio",
+  title: { default: "Angerlona", template: "%s · Angerlona" },
+  description:
+    "Angelina's portfolio: software engineering student at uWaterloo and freelance designer/illustrator.",
 };
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.png" className="rounded-full" />
+        <link rel="icon" href="/favicon.png" />
       </head>
       <body className="bg-background text-white antialiased">{children}</body>
     </html>

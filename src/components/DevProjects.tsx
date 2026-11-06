@@ -22,7 +22,7 @@ const projects = [
         tools: ["TypeScript", "ReactJS", "NextJS", "TailwindCSS", "Django", "MongoDB"]
     },
     {
-        imageHref: "/portfolio.png",
+        imageHref: "/portfolio.webp",
         title: "Portfolio Website",
         desc: "The site that you are seeing right now! This site contains my developer portfolio, as well as my portfolio for design work.",
         code: "https://github.com/anglerona/portfolio",
@@ -36,7 +36,7 @@ const projects = [
         desc: "Self-driving Arduino robot with a sunlight-seeking system and screen to display plant stats.",
         code: "https://github.com/anglerona/bulbasaurBot",
         hasLiveSite: false,
-        link: "github.com/anglerona",
+        link: "https://github.com/anglerona/bulbasaurBot",
         tools: ["C++", "Arduino"]
     },
 ]
@@ -44,7 +44,7 @@ const projects = [
 const DevProjects = () => {
     return (
         <FadeInSection>
-            <div id="projects" className=" pb-12">
+            <div id="projects" className="pb-12 scroll-mt-20">
                 <h2 className="py-12 font-semibold text-4xl text-center">Projects</h2>
                 <div className="flex justify-center">
                     <div className="px-4 grid grid-cols-1 gap-4 lg:gap-6 md:grid-cols-2 lg:grid-cols-3 ">

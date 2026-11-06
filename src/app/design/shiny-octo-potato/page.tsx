@@ -16,7 +16,7 @@ export default function ShinyOctoPotato() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Digital Assets", "Illustrations"]} />
 
         {/* Header */}
@@ -35,7 +35,7 @@ export default function ShinyOctoPotato() {
         <ProjectSection eyebrow="Asset Pack" title="Fruit Sprites">
           <div className="max-w-3xl mx-auto">
             <SoloImage
-              src="/shinyocto.png"
+              src="/shinyocto.webp"
               alt="Fruit sprite sheet for Shiny Octo Potato"
               heightClassName="h-[340px] sm:h-[420px] md:h-[480px]"
               maxWidthClassName="max-w-3xl"
@@ -43,7 +43,7 @@ export default function ShinyOctoPotato() {
               // openInNewTab
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left">
               <h3 className="text-lg font-medium">Notes</h3>
               <p className="mt-3 text-white/75">
                 Created 11 sprites in Procreate based on the Suika fruit progression. The monochrome pink palette was requested by the developer and 
@@ -60,7 +60,7 @@ export default function ShinyOctoPotato() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

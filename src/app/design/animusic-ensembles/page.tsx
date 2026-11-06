@@ -1,6 +1,7 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
+import Image from "next/image";
 import ImageGallery from "@/components/Gallery";
 import BackButton from "@/components/BackButton";
 import { ShootingStars } from "@/components/ui/shooting-stars";
@@ -9,28 +10,32 @@ import { StarsBackground } from "@/components/ui/stars-background";
 import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
+import LoopingVideo from "@/components/LoopingVideo";
 
-const keychain = "/animusic-keychain-violin.png";
+const aniExpoPoster = "/animusic-aniexpo-photoshoot.webp";
+const aniExpoVideo = "/animusic-aniexpo-performances.mp4";
 
-const stickerGenshin = "/animusic-stickers-genshin.png";
-const stickerUmaMusume = "/animusic-stickers-uma-musume.png";
-const stickerSpyFamily = "/animusic-stickers-spy-x-family.png";
+const keychain = "/animusic-keychain-violin.webp";
+
+const stickerGenshin = "/animusic-stickers-genshin.webp";
+const stickerUmaMusume = "/animusic-stickers-uma-musume.webp";
+const stickerSpyFamily = "/animusic-stickers-spy-x-family.webp";
 
 const aniCafeSketches = [
-  "/anicafe-sketch-1.png",
-  "/anicafe-sketch-2.png",
-  "/anicafe-sketch-3.png",
+  "/anicafe-sketch-1.webp",
+  "/anicafe-sketch-2.webp",
+  "/anicafe-sketch-3.webp",
 ];
-const aniCafeFinalSketch = "/anicafe-final-sketch.png";
-const aniCafeFinalPoster = "/anicafe-final-poster.png";
+const aniCafeFinalSketch = "/anicafe-final-sketch.webp";
+const aniCafeFinalPoster = "/anicafe-final-poster.webp";
 
 const concertSketches = [
-  "/concert-sketch-1.png",
-  "/concert-sketch-2.png",
-  "/concert-sketch-3.png",
+  "/concert-sketch-1.webp",
+  "/concert-sketch-2.webp",
+  "/concert-sketch-3.webp",
 ];
-const concertFinalSketch = "/concert-final-sketch.png";
-const concertFinalPoster = "/concert-final-poster.png";
+const concertFinalSketch = "/concert-final-sketch.webp";
+const concertFinalPoster = "/concert-final-poster.webp";
 
 export default function AnimusicEnsembles() {
   return (
@@ -38,7 +43,7 @@ export default function AnimusicEnsembles() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Illustrations", "Social Media", "Merch"]} />
 
         <FadeInSection immediate>
@@ -46,13 +51,49 @@ export default function AnimusicEnsembles() {
             <h1 className="text-4xl font-semibold">Animusic Ensembles</h1>
 
             <p className="mt-6 text-white/75 max-w-3xl mx-auto">
-              Illustrated promotional poster artwork and merch designs for
-              Animusic Ensembles, including two poster workflows from sketch
-              exploration to final delivery, plus sticker sheets and a keychain
-              design.
+              Illustrated promotional poster artwork, social media posts and
+              merch designs for Animusic Ensembles, including two poster
+              workflows from sketch exploration to final delivery, plus sticker
+              sheets and a keychain design.
             </p>
           </div>
         </FadeInSection>
+
+        <ProjectSection eyebrow="Social Media" title="AniExpo 2026">
+          <div className="space-y-8">
+            <p className="text-white/70 text-center max-w-3xl mx-auto">
+              Social media posts promoting Animusic Ensembles&apos; events at
+              AniExpo: an illustrated poster for the cosplay photoshoot and a
+              video post announcing the club&apos;s performances.
+            </p>
+
+            <div className="grid gap-10 md:grid-cols-2 items-start">
+              <div>
+                <h3 className="text-xl font-medium mb-4 text-center">
+                  Cosplay Photoshoot Poster
+                </h3>
+                <SoloImage
+                  src={aniExpoPoster}
+                  alt="AniExpo Cosplay Photoshoot poster: two anime characters, one with pink hair and one with long teal twin-tails, making a heart shape with their arms. SLC Marketplace, November 7th, 2026, 7:00 to 9:00 PM."
+                  maxWidthClassName="max-w-full"
+                />
+              </div>
+
+              <div>
+                <h3 className="text-xl font-medium mb-4 text-center">
+                  Performances Video Post
+                </h3>
+                <LoopingVideo
+                  className="w-full h-auto border border-white/15 bg-black/10"
+                  src={aniExpoVideo}
+                  width={2608}
+                  height={3260}
+                  label="AniExpo performances announcement video post (looping, no audio)"
+                />
+              </div>
+            </div>
+          </div>
+        </ProjectSection>
 
         <ProjectSection
           eyebrow="Poster Workflow"
@@ -63,7 +104,7 @@ export default function AnimusicEnsembles() {
               <h3 className="text-xl font-medium mb-4 text-center">
                 Sketch Exploration
               </h3>
-              <div className="rounded-2xl border border-white/15 bg-black/10 p-3">
+              <div>
                 <ImageGallery images={concertSketches} />
               </div>
               <p className="text-white/70 text-center max-w-3xl mx-auto mt-5">
@@ -109,7 +150,7 @@ export default function AnimusicEnsembles() {
               <h3 className="text-xl font-medium mb-4 text-center">
                 Sketch Exploration
               </h3>
-              <div className="rounded-2xl border border-white/15 bg-black/10 p-3">
+              <div>
                 <ImageGallery images={aniCafeSketches} />
               </div>
               <p className="text-white/70 text-center max-w-3xl mx-auto mt-5">
@@ -149,7 +190,7 @@ export default function AnimusicEnsembles() {
 
         <ProjectSection eyebrow="Merch" title="Stickers & Keychain">
           <div className="grid gap-10 lg:grid-cols-2 items-start">
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-lg font-medium text-center mb-5">Keychain</h3>
 
               <SoloImage
@@ -166,28 +207,28 @@ export default function AnimusicEnsembles() {
             </div>
 
 
-            <div className="rounded-2xl border border-white/15 bg-black/10 p-6">
+            <div className="border border-white/15 bg-black/10 p-6">
               <h3 className="text-lg font-medium text-center mb-5">
                 Sticker Sheets
               </h3>
 
               <div className="grid gap-4">
-                {[stickerGenshin, stickerUmaMusume, stickerSpyFamily].map(
-                  (src) => (
-                    <div
-                      key={src}
-                      className="rounded-2xl border border-white/10 bg-black/10 p-4 flex items-center justify-center"
-                    >
-                      <div className="h-full w-full">
-                        <img
-                          src={src}
-                          alt="Sticker sheet"
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
-                  ),
-                )}
+                {[
+                  { src: stickerGenshin, alt: "Genshin Impact sticker sheet" },
+                  { src: stickerUmaMusume, alt: "Uma Musume sticker sheet" },
+                  { src: stickerSpyFamily, alt: "Spy x Family sticker sheet" },
+                ].map(({ src, alt }) => (
+                  <div key={src} className="flex items-center justify-center">
+                    <Image
+                      src={src}
+                      alt={alt}
+                      width={1600}
+                      height={1200}
+                      sizes="(min-width: 1200px) 480px, 100vw"
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
+                ))}
               </div>
 
               <p className="mt-6 text-white/75 text-center">
@@ -205,7 +246,7 @@ export default function AnimusicEnsembles() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }

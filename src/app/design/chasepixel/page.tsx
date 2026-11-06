@@ -10,7 +10,7 @@ import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
-const assetsSheet = "/chasepixel.png";
+const assetsSheet = "/chasepixel.webp";
 const paletteSheet = "/chasepixel-colors.png";
 
 export default function Chasepixel() {
@@ -19,7 +19,7 @@ export default function Chasepixel() {
       <StarsBackground className="fixed inset-0 z-[-1]" />
       <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <div className="relative z-10">
+      <main className="relative z-10">
         <ProjectStickyBar badges={["Illustrations", "Digital Assets", "Branding"]} />
 
         <FadeInSection immediate>
@@ -52,7 +52,7 @@ export default function Chasepixel() {
             />
 
             <div className="mt-8 grid gap-4 md:grid-cols-4">
-              <div className="md:col-span-2 rounded-2xl border border-white/15 bg-black/10 p-6 text-left">
+              <div className="md:col-span-2 border border-white/15 bg-black/10 p-6 text-left">
                 <h3 className="text-lg font-medium">Design goals</h3>
                 <ul className="mt-3 text-white/75 space-y-2 list-disc list-inside">
                   <li>Communicate collaboration, creativity, and problem-solving through everyday work moments</li>
@@ -61,7 +61,7 @@ export default function Chasepixel() {
                 </ul>
               </div>
 
-              <div className="md:col-span-2 rounded-2xl border border-white/15 bg-black/10 p-6 text-left">
+              <div className="md:col-span-2 border border-white/15 bg-black/10 p-6 text-left">
                 <h3 className="text-lg font-medium">Usage</h3>
                 <p className="mt-3 text-white/75">
                   Designed for landing sections, feature callouts, and social graphics where
@@ -83,7 +83,7 @@ export default function Chasepixel() {
               // openInNewTab
             />
 
-            <div className="mt-8 rounded-2xl border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
+            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
               <h3 className="text-lg font-medium">Palette rationale</h3>
               <p className="mt-3 text-white/75">
                 Chose a neutral + pastel palette to keep the set visually cohesive and adaptable
@@ -107,7 +107,7 @@ export default function Chasepixel() {
         </FadeInSection>
 
         <div className="h-28" />
-      </div>
+      </main>
     </div>
   );
 }
