@@ -1,11 +1,8 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 import ImageGallery from "@/components/Gallery";
@@ -79,18 +76,17 @@ const uiAssetAlts = [
 export default function CatchMyDrift() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["UI/UX", "Digital Assets", "Illustrations"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Catch My Drift</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Catch My Drift</h1>
+            <CaseStudyTags slug="catch-my-drift" />
 
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               Designed the UI assets, character sprites, and screen mockups for Catch My Drift, a
               dating game set on the beach. Players dodge rejections, catch
               hints, and shoot their shot to win someone over. The pink and
@@ -102,9 +98,9 @@ export default function CatchMyDrift() {
 
         {/* SCREENS */}
         <ProjectSection eyebrow="Game Screens" title="Screen Mockups">
-          <div className="max-w-5xl mx-auto space-y-12">
+          <div className="space-y-12">
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Title Screen
               </h3>
               <SoloImage
@@ -115,10 +111,10 @@ export default function CatchMyDrift() {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Game Flow
               </h3>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Mocked up each step of the game, from the instructions and
                 story cutscenes to gameplay and the lose screen, so the
                 pop-ups, captions, and HUD stay consistent from start to end.
@@ -130,22 +126,22 @@ export default function CatchMyDrift() {
 
         {/* SPRITES */}
         <ProjectSection eyebrow="Characters" title="Character Sprites">
-          <div className="max-w-5xl mx-auto space-y-12">
-            <p className="text-white/70 text-center max-w-3xl mx-auto">
+          <div className="space-y-12">
+            <p className="text-muted">
               Illustrated a sprite for every state each character can be in,
               so the game can swap poses as the player moves, gets hit, makes
               a catch, wins, or loses.
             </p>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Love Interest
               </h3>
               <ImageGallery images={womanSprites} alts={womanSpriteAlts} columns={2} />
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">Player</h3>
+              <h3 className="card-title mb-4">Player</h3>
               <ImageGallery images={playerSprites} alts={playerSpriteAlts} />
             </div>
           </div>
@@ -153,9 +149,9 @@ export default function CatchMyDrift() {
 
         {/* UI ASSETS */}
         <ProjectSection eyebrow="Game UI" title="Logo & UI Assets">
-          <div className="max-w-5xl mx-auto space-y-12">
+          <div className="space-y-12">
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">Logo</h3>
+              <h3 className="card-title mb-4">Logo</h3>
               <SoloImage
                 src={logo}
                 alt="Catch My Drift logo: bubbly pink and white lettering over a large heart"
@@ -164,10 +160,10 @@ export default function CatchMyDrift() {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Buttons, Health Bar &amp; Pop-ups
               </h3>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Built a small set of reusable UI pieces: buttons for every
                 action, a heart health bar in eleven states, and pop-up windows
                 for instructions and results.
@@ -177,13 +173,8 @@ export default function CatchMyDrift() {
           </div>
         </ProjectSection>
 
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="catch-my-drift" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

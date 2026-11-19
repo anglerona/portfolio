@@ -1,11 +1,8 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import ImageGallery from "@/components/Gallery";
 
@@ -74,18 +71,17 @@ const mathsocAlts = [
 export default function Miscellaneous() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["Social Media", "Illustrations"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Miscellaneous</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Miscellaneous</h1>
+            <CaseStudyTags slug="miscellaneous" />
 
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               A collection of editorial illustration, social media graphics and
               event posters for student publications and organizations at the
               University of Waterloo: UW Imprint, the Computer Science Club,
@@ -96,17 +92,17 @@ export default function Miscellaneous() {
 
         {/* UW Imprint */}
         <ProjectSection eyebrow="Editorial" title="UW Imprint">
-          <div className="max-w-5xl mx-auto space-y-16">
-            <p className="text-white/70 text-center max-w-3xl mx-auto">
+          <div className="space-y-16">
+            <p className="text-muted">
               Editorial illustration and page design for UW Imprint, the
               University of Waterloo&apos;s student newspaper.
             </p>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 November 2026 Issue
               </h3>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Illustrated the cover of the November 2026 issue and the tarot
                 card art for &ldquo;What&apos;s in the cards? Your November
                 tarot reading,&rdquo; a feature by Angela Li.
@@ -115,10 +111,10 @@ export default function Miscellaneous() {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Matcha Feature
               </h3>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Illustrations and page layout for &ldquo;Matcha here, matcha
                 there: Matcha boom explained,&rdquo; a three-page feature
                 written by Annora Jo. The spread pairs flat matcha-themed
@@ -132,8 +128,8 @@ export default function Miscellaneous() {
 
         {/* CSC */}
         <ProjectSection eyebrow="Social Media" title="Computer Science Club">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+          <div>
+            <p className="text-muted mb-8">
               Event posters for the University of Waterloo Computer Science
               Club, including an industry networking event with Atlassian in a
               retro pixel-art style and an illustrated summer bonfire picnic.
@@ -145,8 +141,8 @@ export default function Miscellaneous() {
 
         {/* Crafts4Charity */}
         <ProjectSection eyebrow="Social Media" title="Crafts4Charity">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+          <div>
+            <p className="text-muted mb-8">
               Illustrated event posters and posts for Crafts4Charity, following
               each term&apos;s style guide and theme: a felt crafts workshop
               with UW Sewciety raising money for First Book Canada, the Fall
@@ -160,8 +156,8 @@ export default function Miscellaneous() {
 
         {/* MathSoc */}
         <ProjectSection eyebrow="Social Media" title="MathSoc">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+          <div>
+            <p className="text-muted mb-8">
               Graphics for the University of Waterloo Mathematics Society,
               including Party with Profs, a Casino Night co-hosted with the
               Poker Studies Club, locker registration, and executive
@@ -172,13 +168,8 @@ export default function Miscellaneous() {
           </div>
         </ProjectSection>
 
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="miscellaneous" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

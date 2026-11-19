@@ -1,12 +1,8 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
-import Badge from "@/components/Badge";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 import ImageGallery from "@/components/Gallery";
@@ -29,24 +25,17 @@ const timesSquare = "/veria-times-square.webp";
 export default function VeriaLabs() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["Illustrations", "Digital Assets"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Veria Labs</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Veria Labs</h1>
+            <CaseStudyTags slug="veria-labs" />
 
-            <div className="mt-4 flex flex-wrap justify-center gap-2">
-              <Badge label="Role: Illustrator" variant="glass" />
-              <Badge label="Oil-paint style" variant="glass" />
-              <Badge label="Web + promo" variant="glass" />
-            </div>
-
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               Commissioned illustration work for Veria Labs, including oil-paint–style flower
               artwork for web and promotional use, plus a set of website banner variants for
               light/dark mode.
@@ -56,7 +45,7 @@ export default function VeriaLabs() {
 
         {/* BANNERS */}
         <ProjectSection eyebrow="Web" title="Website Banners (Light/Dark + Unused Sunset)">
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="space-y-8">
             <div className="grid gap-6 md:grid-cols-2 items-start">
               <SoloImage
                 src={banners[0]}
@@ -70,15 +59,15 @@ export default function VeriaLabs() {
               />
             </div>
 
-            <div className="border border-white/15 bg-black/10 p-6 text-center">
-              <p className="text-white/75 max-w-3xl mx-auto">
+            <div>
+              <p className="text-muted">
                 Created day/night banner variants designed to feel native in both light and dark
                 mode while maintaining consistent composition and brand tone.
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-xl font-medium mb-4 text-center">Sunset Exploration (Unused)</h3>
+            <div>
+              <h3 className="card-title mb-4">Sunset Exploration (Unused)</h3>
               <SoloImage
                 src={banners[2]}
                 alt="Unused sunset banner exploration"
@@ -90,8 +79,8 @@ export default function VeriaLabs() {
 
         {/* FLOWERS */}
         <ProjectSection eyebrow="Illustration" title="Oil-Paint Flower Set">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+          <div>
+            <p className="text-muted mb-8">
               Painted four flower illustrations in an oil-paint style per the commissioner’s
               request, intended for use across the website and promotional materials.
             </p>
@@ -104,7 +93,7 @@ export default function VeriaLabs() {
 
         {/* TIMES SQUARE */}
         <ProjectSection eyebrow="Highlight" title="Times Square Billboard">
-          <div className="max-w-5xl mx-auto">
+          <div>
             <SoloImage
               src={timesSquare}
               alt="Times Square billboard featuring my flower illustrations"
@@ -113,8 +102,8 @@ export default function VeriaLabs() {
               priority
             />
 
-            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-center">
-              <p className="text-white/75 max-w-3xl mx-auto">
+            <div className="mt-8">
+              <p className="text-muted">
                 A fun milestone: seeing my flower illustrations displayed on a Times Square
                 billboard as part of Veria Labs’ promotional rollout.
               </p>
@@ -122,13 +111,8 @@ export default function VeriaLabs() {
           </div>
         </ProjectSection>
 
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="veria-labs" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

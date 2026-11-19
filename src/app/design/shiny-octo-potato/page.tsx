@@ -1,30 +1,25 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
-import Badge from "@/components/Badge";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
 export default function ShinyOctoPotato() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["Digital Assets", "Illustrations"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Shiny Octo Potato</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Shiny Octo Potato</h1>
+            <CaseStudyTags slug="shiny-octo-potato" />
 
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               Illustrated a set of fruit sprites for a Suika Game–inspired clone, focusing on
               clean silhouettes, consistent lighting, and readability at small sizes.
             </p>
@@ -33,7 +28,7 @@ export default function ShinyOctoPotato() {
 
         {/* Main */}
         <ProjectSection eyebrow="Asset Pack" title="Fruit Sprites">
-          <div className="max-w-3xl mx-auto">
+          <div>
             <SoloImage
               src="/shinyocto.webp"
               alt="Fruit sprite sheet for Shiny Octo Potato"
@@ -43,9 +38,9 @@ export default function ShinyOctoPotato() {
               // openInNewTab
             />
 
-            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left">
-              <h3 className="text-lg font-medium">Notes</h3>
-              <p className="mt-3 text-white/75">
+            <div className="mt-8 text-left">
+              <h3 className="text-lg font-bold">Notes</h3>
+              <p className="mt-3 text-muted">
                 Created 11 sprites in Procreate based on the Suika fruit progression. The monochrome pink palette was requested by the developer and 
                 gives the game a distinctive identity and reinforces a playful, candy-like tone that fits the stacking chaos.
               </p>
@@ -53,13 +48,8 @@ export default function ShinyOctoPotato() {
           </div>
         </ProjectSection>
 
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="shiny-octo-potato" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

@@ -6,6 +6,11 @@ import Left from "@/assets/left.svg";
 import Right from "@/assets/right.svg";
 import X from "@/assets/x.svg";
 
+// Thumbnail and full-size `sizes` are shared between the grid, the viewer and the
+// preloads, so the browser picks the exact same files and reuses its cache.
+const THUMB_SIZES = "(min-width: 1200px) 33vw, (min-width: 768px) 40vw, 80vw";
+const FULL_SIZES = "(min-width: 1024px) 75vw, 100vw";
+
 interface ImageGalleryProps {
   images: string[];
   /** Optional descriptions for each image (same order as `images`). */
@@ -19,7 +24,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   columns = 3,
 }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [transitioning, setTransitioning] = useState<boolean>(false);
+  // Thumbnail being hovered/focused: start fetching its full-size version early.
+  const [warmIndex, setWarmIndex] = useState<number | null>(null);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -36,17 +42,11 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
   const closeImage = useCallback(() => setSelectedIndex(null), []);
 
   const step = useCallback(
-    (dir: 1 | -1) => {
-      if (selectedIndex === null || transitioning) return;
-      setTransitioning(true);
-      setTimeout(() => {
-        setSelectedIndex(
-          (selectedIndex + dir + images.length) % images.length,
-        );
-        setTransitioning(false);
-      }, 300);
-    },
-    [selectedIndex, transitioning, images.length],
+    (dir: 1 | -1) =>
+      setSelectedIndex((i) =>
+        i === null ? i : (i + dir + images.length) % images.length,
+      ),
+    [images.length],
   );
   const showPrevImage = useCallback(() => step(-1), [step]);
   const showNextImage = useCallback(() => step(1), [step]);
@@ -123,8 +123,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             ref={(el) => {
               thumbRefs.current[index] = el;
             }}
-            className="cursor-pointer flex-shrink-0 w-[80%] sm:w-[60%] md:w-[40%] lg:w-full py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-300/70"
+            className="cursor-zoom-in flex-shrink-0 w-[80%] sm:w-[60%] md:w-[40%] lg:w-full overflow-hidden"
             onClick={() => openImage(index)}
+            onPointerEnter={() => setWarmIndex(index)}
+            onFocus={() => setWarmIndex(index)}
             aria-label={`${altFor(index)}, view larger`}
           >
             <Image
@@ -132,13 +134,27 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
               alt=""
               width={1200}
               height={1200}
-              sizes="(min-width: 1200px) 33vw, (min-width: 768px) 40vw, 80vw"
-              className="w-full h-full border border-white/20 object-cover"
+              sizes={THUMB_SIZES}
+              className="w-full h-full object-cover"
               priority={index === 0}
             />
           </button>
         ))}
       </div>
+
+      {warmIndex !== null && selectedIndex === null && (
+        <Image
+          key={`warm-${images[warmIndex]}`}
+          src={images[warmIndex]}
+          alt=""
+          aria-hidden="true"
+          width={1600}
+          height={1600}
+          sizes={FULL_SIZES}
+          loading="eager"
+          className="hidden"
+        />
+      )}
 
       {/* Modal Carousel */}
       {selectedIndex !== null && (
@@ -165,21 +181,60 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
             <X className="h-4 w-4 md:h-5 md:w-5 fill-current" aria-hidden="true" />
           </button>
 
-          <div className="relative w-full lg:w-auto overflow-hidden">
-            {/* Image with smooth transition */}
-            <div
-              className={`transition-opacity duration-500 ${transitioning ? "opacity-0" : "opacity-100"}`}
-            >
-              <Image
-                src={images[selectedIndex]}
-                alt={altFor(selectedIndex)}
-                width={1600}
-                height={1600}
-                sizes="100vw"
-                className="w-full lg:w-auto mx-auto border border-white/20 max-h-screen"
-              />
-            </div>
+          {/*
+            Fixed viewing area: every image is scaled to fit it (keeping its shape),
+            so small and large source files all show at the same size.
+            Clicks on the empty space around the image pass through to the overlay.
+          */}
+          <div className="pointer-events-none relative h-[80vh] w-[calc(100vw-5rem)] md:h-[88vh] md:w-[calc(100vw-10rem)]">
+            {/*
+              Bottom layer: the same file and size as the thumbnail, already in the
+              browser cache, so something correct shows instantly. Keyed by src so
+              switching images never shows the previous picture.
+            */}
+            <Image
+              key={`thumb-${images[selectedIndex]}`}
+              src={images[selectedIndex]}
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes={THUMB_SIZES}
+              loading="eager"
+              className="border-0 object-contain"
+            />
+            {/*
+              Top layer: full-size version. Until it arrives it draws nothing, so the
+              thumbnail underneath shows through; no load event needed.
+            */}
+            <Image
+              key={`full-${images[selectedIndex]}`}
+              src={images[selectedIndex]}
+              alt={altFor(selectedIndex)}
+              fill
+              sizes={FULL_SIZES}
+              loading="eager"
+              className="border-0 object-contain"
+            />
           </div>
+
+          {/* Preload the neighbouring full-size images so the arrows feel instant. */}
+          {images.length > 1 &&
+            [-1, 1].map((d) => {
+              const src = images[(selectedIndex + d + images.length) % images.length];
+              return (
+                <Image
+                  key={`preload-${src}`}
+                  src={src}
+                  alt=""
+                  aria-hidden="true"
+                  width={1600}
+                  height={1600}
+                  sizes={FULL_SIZES}
+                  loading="eager"
+                  className="hidden"
+                />
+              );
+            })}
 
           {images.length > 1 && (
             <>
@@ -188,7 +243,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                 type="button"
                 onClick={showPrevImage}
                 aria-label="Previous image"
-                className="fixed left-1 md:left-8 top-1/2 duration-200 opacity-70 hover:opacity-100 focus-visible:opacity-100 text-3xl p-3 md:p-4 transform -translate-y-1/2 z-50"
+                className="fixed left-1 md:left-8 top-1/2 text-white duration-200 opacity-70 hover:opacity-100 focus-visible:opacity-100 text-3xl p-3 md:p-4 transform -translate-y-1/2 z-50"
               >
                 <Left className="h-3 w-3 md:h-5 md:w-5 fill-current" aria-hidden="true" />
               </button>
@@ -198,7 +253,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({
                 type="button"
                 onClick={showNextImage}
                 aria-label="Next image"
-                className="fixed right-1 md:right-8 top-1/2 duration-200 opacity-70 hover:opacity-100 focus-visible:opacity-100 text-3xl p-3 md:p-4 transform -translate-y-1/2 z-50"
+                className="fixed right-1 md:right-8 top-1/2 text-white duration-200 opacity-70 hover:opacity-100 focus-visible:opacity-100 text-3xl p-3 md:p-4 transform -translate-y-1/2 z-50"
               >
                 <Right className="h-3 w-3 md:h-5 md:w-5 fill-current" aria-hidden="true" />
               </button>

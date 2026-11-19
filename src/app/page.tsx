@@ -1,109 +1,19 @@
-"use client";
-import Image from "next/image";
-import grain from "@/assets/grain.jpg"
-import StarIcon from "@/assets/star.svg"
-import Sparkle from "@/assets/sparkle.svg"
-import Button from "@/components/Button";
-import { StarOrbit } from "@/components/StarOrbit";
-import FadeInSection from "@/components/FadeInSection";
-import { StarsBackground } from "@/components/ui/stars-background";
+import DuckAvatar from "@/components/DuckAvatar";
 
 export default function Home() {
   return (
-    <main className="bg-background min-h-screen w-full relative overflow-clip">
-      {/* <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]"> */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `url(${grain.src})`
-        }}>
+    <main id="main" className="flex flex-1 items-center">
+      <div className="site-container flex flex-col gap-14 py-24 md:flex-row md:items-center md:justify-between md:gap-10">
+        <div>
+          <h1 className="page-title">Hi, I&apos;m Angelina.</h1>
+          <p className="mt-6 max-w-[620px] text-lg leading-7 text-muted">
+            I&apos;m a Software Engineering student at the University of Waterloo.
+            <br />
+            I write code and design things.
+          </p>
         </div>
-        <StarsBackground className="absolute inset-0" />
-        <div className="size-[250px] lg:size-[500px] home-ring" />
-        <div className="size-[450px] lg:size-[700px] home-ring" />
-        <div className="size-[650px] lg:size-[900px] home-ring" />
-        <div className="size-[850px] lg:size-[1100px] home-ring" />
-
-        
-        <StarOrbit size={360} rotation={240} spinDuration="6s" orbitDuration="32s">
-          <Sparkle className="size-3 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={380} rotation={80} spinDuration="6s" orbitDuration="32s">
-          <Sparkle className="size-5 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={390} rotation={250} spinDuration="6s" orbitDuration="32s">
-          <Sparkle className="size-4 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={440} rotation={-14} spinDuration="6s" orbitDuration="32s">
-          <Sparkle className="size-8 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={480} rotation={178} spinDuration="6s" orbitDuration="32s">
-          <Sparkle className="size-10 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={510} rotation={98} spinDuration="6s" orbitDuration="32s">
-          <StarIcon className="size-8 text-purple-300" />
-        </StarOrbit>
-        <StarOrbit size={530} rotation={-50} spinDuration="6s" orbitDuration="40s">
-          <StarIcon className="size-8 text-purple-300" />
-        </StarOrbit>
-        <StarOrbit size={540} rotation={138} spinDuration="6s" orbitDuration="40s">
-          <Sparkle className="size-3 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={550} rotation={-40} spinDuration="6s" orbitDuration="40s">
-          <Sparkle className="size-3 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={600} rotation={20} spinDuration="6s" orbitDuration="40s">
-          <StarIcon className="size-12 text-purple-300" />
-        </StarOrbit>
-        <StarOrbit size={630} rotation={-5} spinDuration="6s" orbitDuration="40s">
-          <Sparkle className="size-3 text-purple-300/30" />
-        </StarOrbit>        
-        <StarOrbit size={650} rotation={144} spinDuration="6s" orbitDuration="48s">
-          <Sparkle className="size-14 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={690} rotation={84} spinDuration="6s" orbitDuration="48s">
-          <Sparkle className="size-4 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={690} rotation={125} spinDuration="6s" orbitDuration="48s">
-          <Sparkle className="size-4 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={710} rotation={-45} spinDuration="6s" orbitDuration="48s">
-          <Sparkle className="size-4 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={740} rotation={130} spinDuration="6s" orbitDuration="48s">
-          <Sparkle className="size-3 text-purple-300/30" />
-        </StarOrbit>
-        <StarOrbit size={740} rotation={-100} spinDuration="6s" orbitDuration="50s">
-          <StarIcon className="size-12 text-purple-300" />
-        </StarOrbit>
-        <StarOrbit size={770} rotation={-72} spinDuration="6s" orbitDuration="50s">
-          <StarIcon className="size-28 text-purple-300" />
-        </StarOrbit>
-      {/* </div> */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen py-12">
-        <FadeInSection>
-          <div className="text-center max-w-md mx-auto">
-            <Image
-              className="rounded-full mx-auto"
-              src="/goose.png"
-              alt=""
-              priority
-              width={128}
-              height={128}
-            />
-            <div className="px-4 py-8">
-              <h1 className="font-semibold pb-4 text-4xl">Hi, I&apos;m Angelina</h1>
-              <p className="">
-                I&apos;m a software engineering student @ uWaterloo and I also do
-                freelance design/illustration work. <br /> Thanks for stopping by!
-              </p>
-            </div>
-            <div className="flex flex-col md:flex-row gap-4 px-4 w-full justify-center">
-              <Button href="/dev">Developer Portfolio</Button>
-              <Button href="/design">Design Portfolio</Button>
-            </div>
-          </div>
-        </FadeInSection>
+        <DuckAvatar className="w-[220px] md:w-[300px] lg:w-[400px]" />
       </div>
-      
     </main>
   );
 }

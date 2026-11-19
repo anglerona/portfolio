@@ -1,17 +1,12 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 import ImageGallery from "@/components/Gallery";
-import Badge from "@/components/Badge";
 import Image from "next/image";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
-
-import BackButton from "@/components/BackButton";
 
 // Branding
 const logos = ["/wqc-logo.png", "/wqc-logo-full.png"];
@@ -104,17 +99,16 @@ const fall26CardAlts = [
 export default function WaterlooQuantClub() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["Branding", "Social Media", "UI/UX"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Waterloo Quant Club</h1>
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+          <div className="pt-10">
+            <h1 className="page-title">Waterloo Quant Club</h1>
+            <CaseStudyTags slug="wqc" />
+            <p className="mt-4 text-lg leading-7 text-ink">
               Worked on visual design across branding, UI/UX, and social media
               for the Waterloo Quant Club. This project spans two rebrands: a
               full visual rebrand in Winter 2026 that moved away from the
@@ -132,8 +126,8 @@ export default function WaterlooQuantClub() {
         >
           <div className="space-y-16">
             {/* Description */}
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-white/75">
+            <div>
+              <p className="text-muted">
                 Expanded the club&apos;s visual identity with a more playful,
                 game-inspired direction. The new aesthetic uses a primarily
                 greyscale palette paired with dice, playing cards, and other
@@ -144,17 +138,18 @@ export default function WaterlooQuantClub() {
 
             {/* Visual Assets */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Visual Assets
               </h3>
 
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Created a reusable set of minimal, game-inspired assets to
                 establish a consistent visual language across social media and
                 the website.
               </p>
 
               <SoloImage
+                dark
                 src={fall26Assets[0]}
                 alt="Fall 2026 Waterloo Quant Club visual assets featuring dice and playing cards"
               />
@@ -162,11 +157,11 @@ export default function WaterlooQuantClub() {
 
             {/* Instagram */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Instagram Graphics
               </h3>
 
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Applied the new visual direction across social media while
                 adapting the system to different events and content.
               </p>
@@ -176,11 +171,11 @@ export default function WaterlooQuantClub() {
 
             {/* Sponsors Page */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Sponsors Page Redesign
               </h3>
 
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+              <p className="text-muted mb-8">
                 Redesigned the sponsors page with a cleaner, more spacious
                 layout and clearer visual hierarchy. Replaced the previous boxed
                 layout with a more open design and introduced playing card suits
@@ -198,11 +193,11 @@ export default function WaterlooQuantClub() {
           <div className="space-y-16">
             {/* Stickers */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Sticker Designs
               </h3>
 
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Designed a set of seven die-cut stickers, from logo stickers to
                 illustrated characters surrounded by dice, playing cards and
                 market charts, carrying the game-inspired theme into merch.
@@ -216,11 +211,11 @@ export default function WaterlooQuantClub() {
 
             {/* Card back drafts */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Card Back Drafts
               </h3>
 
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Explored eight card back directions built around the club logo,
                 from concentric rings and planet horizons to crystal dice and
                 angular shards. The concentric ring design (1A) was chosen for
@@ -235,11 +230,11 @@ export default function WaterlooQuantClub() {
 
             {/* Playing cards */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Playing Card Deck
               </h3>
 
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Designed a full custom deck with illustrated court cards and a
                 goose joker. A selection of cards from the deck is shown below.
               </p>
@@ -252,15 +247,15 @@ export default function WaterlooQuantClub() {
         {/* BRANDING */}
         <ProjectSection eyebrow="Foundation" title="Brand Identity">
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="border border-white/15 bg-black/10 p-6">
-              <h3 className="font-medium text-lg mb-4">Logo System</h3>
-              <p className="text-white/75 mb-6">
+            <div>
+              <h3 className="text-lg font-bold mb-4">Logo System</h3>
+              <p className="text-muted mb-6">
                 Designed a flexible logo system that works both as a standalone
                 mark and alongside the club name, allowing consistent usage
                 across web, print, and social.
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-4 bg-ink p-6">
                 <div className="flex justify-center">
                   <div className="w-32 h-32 sm:w-36 sm:h-36 p-4">
                     <Image
@@ -285,16 +280,16 @@ export default function WaterlooQuantClub() {
               </div>
             </div>
 
-            <div className="border border-white/15 bg-black/10 p-6">
-              <h3 className="font-medium text-lg mb-4">Rebrand Direction</h3>
-              <p className="text-white/75 mb-6">
+            <div>
+              <h3 className="text-lg font-bold mb-4">Rebrand Direction</h3>
+              <p className="text-muted mb-6">
                 The Winter 2026 rebrand aimed to move away from a busy,
                 inconsistent visual language toward a more minimal, clean, and
                 modern identity that better reflects quantitative finance.
               </p>
 
               <div className="space-y-4">
-                <h4 className="font-medium text-base text-center">
+                <h4 className="font-bold text-base">
                   Assets Sheet
                 </h4>
                 <div>
@@ -315,7 +310,7 @@ export default function WaterlooQuantClub() {
         <ProjectSection eyebrow="Winter 2026" title="Rebrand Rollout">
           <div className="space-y-12">
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Style Guide
               </h3>
               <SoloImage
@@ -326,14 +321,14 @@ export default function WaterlooQuantClub() {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Instagram Graphics
               </h3>
               <ImageGallery images={winterInstagram} />
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Event Posters
               </h3>
               <ImageGallery images={winterPoster} />
@@ -348,7 +343,7 @@ export default function WaterlooQuantClub() {
         >
           <div className="space-y-16">
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 WQC Tokens
               </h3>
               <SoloImage
@@ -358,12 +353,12 @@ export default function WaterlooQuantClub() {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-6 text-center">
+              <h3 className="card-title mb-6">
                 Welcome Screen & Banner
               </h3>
 
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-center">
-                <div className="border border-white/15 bg-black/10 p-4">
+                <div>
                   <div className="flex justify-center md:h-[360px]">
                     <Image
                       src={wtcWelcomeScreen[0]}
@@ -375,7 +370,7 @@ export default function WaterlooQuantClub() {
                   </div>
                 </div>
 
-                <div className="border border-white/15 bg-black/10 p-4">
+                <div>
                   <div className="flex justify-center md:h-[360px]">
                     <Image
                       src={wtcBanner[0]}
@@ -395,30 +390,30 @@ export default function WaterlooQuantClub() {
         <ProjectSection eyebrow="Fall 2025" title="Legacy Visual System">
           <div className="space-y-16">
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Website UI
               </h3>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mb-6">
+              <p className="text-muted mb-6">
                 Designed six website pages under the club’s legacy aesthetic.
               </p>
               <ImageGallery images={fallWebsite} />
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">Posters</h3>
+              <h3 className="card-title mb-4">Posters</h3>
               <ImageGallery images={fallPosters} />
             </div>
 
             <div className="grid gap-12 md:grid-cols-2">
               <div>
-                <h3 className="text-xl font-medium mb-4 text-center">
+                <h3 className="card-title mb-4">
                   Instagram Stories
                 </h3>
                 <ImageGallery images={fallStories} />
               </div>
 
               <div>
-                <h3 className="text-xl font-medium mb-4 text-center">
+                <h3 className="card-title mb-4">
                   Instagram Posts
                 </h3>
                 <ImageGallery images={fallInstagram} />
@@ -429,7 +424,7 @@ export default function WaterlooQuantClub() {
 
         {/* Reflection */}
         <ProjectSection eyebrow="Reflection" title="Outcome & Learnings">
-          <div className="max-w-3xl mx-auto text-center text-white/75">
+          <div className="text-muted">
             <p>
               This project strengthened my ability to design scalable visual
               systems and transition an organization through a rebrand without
@@ -439,12 +434,7 @@ export default function WaterlooQuantClub() {
           </div>
         </ProjectSection>
 
-        {/* Footer */}
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="wqc" />
       </main>
     </div>
   );

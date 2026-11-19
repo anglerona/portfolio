@@ -1,11 +1,8 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import ImageGallery from "@/components/Gallery";
 
@@ -52,18 +49,17 @@ const merchAlts = [
 export default function PokemonFanArt() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["Illustrations", "Merch"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Pokémon Fan Art</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Pokémon Fan Art</h1>
+            <CaseStudyTags slug="pokemon-fan-art" />
 
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               Created a series of Pokémon fan art illustrations, then turned
               them into keychains and stickers that I sold at anime
               conventions.
@@ -73,8 +69,8 @@ export default function PokemonFanArt() {
 
         {/* ILLUSTRATIONS */}
         <ProjectSection eyebrow="Illustration" title="Fan Art Collection">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+          <div>
+            <p className="text-muted mb-8">
               Drew each Pokémon in a soft, rounded style, keeping the shapes
               simple so they still read clearly at keychain and sticker size.
             </p>
@@ -85,8 +81,8 @@ export default function PokemonFanArt() {
 
         {/* MERCH */}
         <ProjectSection eyebrow="Merch" title="Keychains & Stickers">
-          <div className="max-w-5xl mx-auto">
-            <p className="text-white/70 text-center max-w-3xl mx-auto mb-8">
+          <div>
+            <p className="text-muted mb-8">
               Turned the illustrations into keychains, charms, and stickers,
               and sold them at anime conventions.
             </p>
@@ -95,13 +91,8 @@ export default function PokemonFanArt() {
           </div>
         </ProjectSection>
 
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="pokemon-fan-art" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

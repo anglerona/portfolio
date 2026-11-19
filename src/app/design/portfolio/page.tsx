@@ -1,13 +1,9 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 import ImageGallery from "@/components/Gallery";
-import Badge from "@/components/Badge";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 
@@ -24,24 +20,17 @@ const pages = [
 export default function Portfolio() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["UI/UX", "Branding"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         {/* Header */}
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Personal Portfolio Website</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Personal Portfolio Website</h1>
+            <CaseStudyTags slug="portfolio" />
 
-            {/* <div className="mt-4 flex flex-wrap justify-center gap-2">
-              <Badge label="Role: Designer" variant="glass" />
-              <Badge label="Figma prototypes" variant="glass" />
-              <Badge label="6 screens" variant="glass" />
-            </div> */}
-
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               Designed a dual-portfolio experience with clear navigation between development and
               design work. The goal was a clean, immersive layout that highlights projects while
               keeping the UI lightweight and easy to browse.
@@ -51,7 +40,7 @@ export default function Portfolio() {
 
         {/* Screens */}
         <ProjectSection eyebrow="Deliverable" title="Web Page Designs">
-          <div className="max-w-5xl mx-auto">
+          <div>
             <SoloImage
               src={pages[0]}
               alt="Portfolio home page design"
@@ -67,18 +56,18 @@ export default function Portfolio() {
 
             {/* Notes */}
             <div className="mt-10 grid gap-4 md:grid-cols-3">
-              <div className="md:col-span-2 border border-white/15 bg-black/10 p-6 text-left">
-                <h3 className="text-lg font-medium">Design goals</h3>
-                <ul className="mt-3 text-white/75 space-y-2 list-disc list-inside">
+              <div className="md:col-span-2 text-left">
+                <h3 className="text-lg font-bold">Design goals</h3>
+                <ul className="mt-3 text-muted space-y-2 list-disc list-inside">
                   <li>Make it effortless to switch between Dev and Design portfolios</li>
                   <li>Keep layouts minimal so projects and thumbnails carry the visual weight</li>
                   <li>Maintain consistent hierarchy across pages for fast scanning</li>
                 </ul>
               </div>
 
-              <div className="border border-white/15 bg-black/10 p-6 text-left">
-                <h3 className="text-lg font-medium">Deliverables</h3>
-                <ul className="mt-3 text-white/75 space-y-2 list-disc list-inside">
+              <div className="text-left">
+                <h3 className="text-lg font-bold">Deliverables</h3>
+                <ul className="mt-3 text-muted space-y-2 list-disc list-inside">
                   <li>Page mockups</li>
                   <li>Reusable components</li>
                   <li>Navigation + layout system</li>
@@ -90,7 +79,7 @@ export default function Portfolio() {
 
         {/* Style guide */}
         <ProjectSection eyebrow="System" title="Style Guide">
-          <div className="max-w-5xl mx-auto">
+          <div>
             <SoloImage
               src={styleGuide}
               alt="Personal portfolio style guide"
@@ -99,29 +88,19 @@ export default function Portfolio() {
               // openInNewTab
             />
 
-            <div className="mt-8 border border-white/15 bg-black/10 p-6 text-left max-w-4xl mx-auto">
-              <h3 className="text-lg font-medium">What it defined</h3>
-              <p className="mt-3 text-white/75">
+            <div className="mt-8 text-left">
+              <h3 className="text-lg font-bold">What it defined</h3>
+              <p className="mt-3 text-muted">
                 Built a style guide to keep spacing, typography, and component styling
                 consistent across the site, making it easy to extend with new projects over time.
               </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                <Badge label="Typography" variant="glass" />
-                <Badge label="Spacing" variant="glass" />
-                <Badge label="Components" variant="glass" />
-              </div>
             </div>
           </div>
         </ProjectSection>
 
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="portfolio" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

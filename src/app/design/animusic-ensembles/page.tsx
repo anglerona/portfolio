@@ -1,13 +1,10 @@
 "use client";
 
 import FadeInSection from "@/components/FadeInSection";
+import { CaseStudyBack, CaseStudyNext, CaseStudyTags } from "@/components/CaseStudy";
 import Image from "next/image";
 import ImageGallery from "@/components/Gallery";
-import BackButton from "@/components/BackButton";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
 
-import ProjectStickyBar from "@/components/ProjectStickyBar";
 import ProjectSection from "@/components/ProjectSection";
 import SoloImage from "@/components/SoloImage";
 import LoopingVideo from "@/components/LoopingVideo";
@@ -40,17 +37,16 @@ const concertFinalPoster = "/concert-final-poster.webp";
 export default function AnimusicEnsembles() {
   return (
     <div className="relative">
-      <StarsBackground className="fixed inset-0 z-[-1]" />
-      <ShootingStars className="fixed inset-0 z-[-2]" />
 
-      <main className="relative z-10">
-        <ProjectStickyBar badges={["Illustrations", "Social Media", "Merch"]} />
+      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+        <CaseStudyBack />
 
         <FadeInSection immediate>
-          <div className="mx-auto max-w-5xl px-4 pt-16 pb-12 text-center">
-            <h1 className="text-4xl font-semibold">Animusic Ensembles</h1>
+          <div className="pt-10">
+            <h1 className="page-title">Animusic Ensembles</h1>
+            <CaseStudyTags slug="animusic-ensembles" />
 
-            <p className="mt-6 text-white/75 max-w-3xl mx-auto">
+            <p className="mt-4 text-lg leading-7 text-ink">
               Illustrated promotional poster artwork, social media posts and
               merch designs for Animusic Ensembles, including two poster
               workflows from sketch exploration to final delivery, plus sticker
@@ -61,7 +57,7 @@ export default function AnimusicEnsembles() {
 
         <ProjectSection eyebrow="Social Media" title="AniExpo 2026">
           <div className="space-y-8">
-            <p className="text-white/70 text-center max-w-3xl mx-auto">
+            <p className="text-muted">
               Social media posts promoting Animusic Ensembles&apos; events at
               AniExpo: an illustrated poster for the cosplay photoshoot and a
               video post announcing the club&apos;s performances.
@@ -69,7 +65,7 @@ export default function AnimusicEnsembles() {
 
             <div className="grid gap-10 md:grid-cols-2 items-start">
               <div>
-                <h3 className="text-xl font-medium mb-4 text-center">
+                <h3 className="card-title mb-4">
                   Cosplay Photoshoot Poster
                 </h3>
                 <SoloImage
@@ -80,11 +76,11 @@ export default function AnimusicEnsembles() {
               </div>
 
               <div>
-                <h3 className="text-xl font-medium mb-4 text-center">
+                <h3 className="card-title mb-4">
                   Performances Video Post
                 </h3>
                 <LoopingVideo
-                  className="w-full h-auto border border-white/15 bg-black/10"
+                  className="w-full h-auto"
                   src={aniExpoVideo}
                   width={2608}
                   height={3260}
@@ -101,13 +97,13 @@ export default function AnimusicEnsembles() {
         >
           <div className="space-y-12">
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Sketch Exploration
               </h3>
               <div>
                 <ImageGallery images={concertSketches} />
               </div>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mt-5">
+              <p className="text-muted mt-5">
                 Explored multiple compositions to find the right balance of
                 energy and readability, then refined the strongest direction
                 into a clean final layout.
@@ -116,7 +112,7 @@ export default function AnimusicEnsembles() {
 
             {/* Final sketch */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Final Sketch
               </h3>
               <SoloImage
@@ -129,7 +125,7 @@ export default function AnimusicEnsembles() {
 
             {/* Final poster */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Final Poster
               </h3>
               <SoloImage
@@ -147,13 +143,13 @@ export default function AnimusicEnsembles() {
           <div className="space-y-12">
             {/* Sketches */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Sketch Exploration
               </h3>
               <div>
                 <ImageGallery images={aniCafeSketches} />
               </div>
-              <p className="text-white/70 text-center max-w-3xl mx-auto mt-5">
+              <p className="text-muted mt-5">
                Explored multiple concepts that blended the café and Pokémon themes, with the marketing team ultimately 
                selecting the middle concept for its distinct look compared to previous café event posters.
               </p>
@@ -161,7 +157,7 @@ export default function AnimusicEnsembles() {
 
             {/* Final sketch */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Final Sketch
               </h3>
               <SoloImage
@@ -174,7 +170,7 @@ export default function AnimusicEnsembles() {
 
             {/* Final poster */}
             <div>
-              <h3 className="text-xl font-medium mb-4 text-center">
+              <h3 className="card-title mb-4">
                 Final Poster
               </h3>
               <SoloImage
@@ -190,8 +186,8 @@ export default function AnimusicEnsembles() {
 
         <ProjectSection eyebrow="Merch" title="Stickers & Keychain">
           <div className="grid gap-10 lg:grid-cols-2 items-start">
-            <div className="border border-white/15 bg-black/10 p-6">
-              <h3 className="text-lg font-medium text-center mb-5">Keychain</h3>
+            <div>
+              <h3 className="text-lg font-bold mb-5">Keychain</h3>
 
               <SoloImage
                 src={keychain}
@@ -200,15 +196,14 @@ export default function AnimusicEnsembles() {
                 maxWidthClassName="max-w-full"
               />
 
-              <p className="mt-6 text-white/75 text-center">
+              <p className="mt-6 text-muted">
                 Keychain illustration featuring the club mascot playing violin,
                 designed to stay readable and clean at small print sizes.
               </p>
             </div>
 
-
-            <div className="border border-white/15 bg-black/10 p-6">
-              <h3 className="text-lg font-medium text-center mb-5">
+            <div>
+              <h3 className="text-lg font-bold mb-5">
                 Sticker Sheets
               </h3>
 
@@ -231,21 +226,15 @@ export default function AnimusicEnsembles() {
                 ))}
               </div>
 
-              <p className="mt-6 text-white/75 text-center">
+              <p className="mt-6 text-muted">
                 Sticker sheets designed for event sales, with each set illustrated to match the concert set list.
               </p>
             </div>
           </div>
         </ProjectSection>
 
-        {/* Footer */}
-        <FadeInSection>
-          <div className="flex justify-center pb-20">
-            <BackButton />
-          </div>
-        </FadeInSection>
+        <CaseStudyNext slug="animusic-ensembles" />
 
-        <div className="h-28" />
       </main>
     </div>
   );

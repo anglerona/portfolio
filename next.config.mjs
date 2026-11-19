@@ -43,6 +43,10 @@ const nextConfig = {
   
       return config;
     },
+    // /dev was renamed to /code in the Simple mode redesign.
+    async redirects() {
+      return [{ source: "/dev", destination: "/code", permanent: true }];
+    },
     images: {
         domains: [
           "api.microlink.io", // Microlink Image Preview

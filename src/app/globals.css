@@ -2,80 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Simple mode: light, minimal, recruiter-friendly. */
+
 @layer base {
-  :root {
-    --background: 291, 86%, 7%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    overflow-x: clip;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.brand");
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    @apply bg-brand text-paper;
+  }
+
+  /* Light grey outline around every portfolio image and video.
+     Add `border-0` to an element to opt out. */
+  main img,
+  main video {
+    border: 1px solid theme("colors.line");
+  }
+
+  /* No outline on images that sit on a dark panel (it reads as a white frame). */
+  main .bg-ink img,
+  main .bg-ink video {
+    border-width: 0;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background;
+@layer components {
+  /* Page width + side padding used by the nav, footer and every page */
+  .site-container {
+    @apply mx-auto w-full max-w-page px-5 md:px-10 lg:px-20;
   }
 
-  .home-ring {
-    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-purple-300/5 shadow-[0_0_80px_inset] shadow-purple-300/5;
+  /* Simple/Display/Page Title: Montserrat Black Italic 64 (44 mobile), tilted 3° */
+  .page-title {
+    @apply inline-block font-display text-[44px] font-black italic leading-none tracking-[-0.03em] md:text-[64px];
+    position: relative;
+    isolation: isolate;
+    text-wrap: balance;
+    transform: rotate(-3deg);
+    transform-origin: left bottom;
+  }
+
+  /* Light-blue slanted triangle behind the end of the title. Absolutely
+     positioned without top/left, so it starts where the next letter would go
+     (right after the last word, even when the title wraps) and takes no space.
+     It's then pulled back over the text. Sized in em so it scales with the font;
+     capped at the title's own width so short titles don't spill to the left. */
+  .page-title::after {
+    --tri-w: min(100% + 0.9em, 4.75em);
+    content: "";
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+    width: var(--tri-w);
+    height: 1.4em;
+    margin-top: -0.3em;
+    margin-left: calc(0.55em - var(--tri-w));
+    background: theme("colors.sky");
+    clip-path: polygon(0% 100%, 100% 0%, 89% 86%);
+    pointer-events: none;
+  }
+
+  /* Simple/Heading/Section: Montserrat Black Italic 32 (26 mobile) */
+  .section-heading {
+    @apply font-display text-[26px] font-black italic leading-[1.1] tracking-[-0.02em] md:text-[32px];
+  }
+
+  /* Simple/Eyebrow: Inter Semi Bold 13, +12% tracking, brand blue */
+  .eyebrow {
+    @apply text-[13px] font-semibold uppercase leading-[18px] tracking-[0.12em] text-brand;
+  }
+
+  /* Simple/Title/Card: Inter Bold 20/28 */
+  .card-title {
+    @apply text-xl font-bold leading-7 text-ink;
+  }
+
+  /* Simple/Meta: Inter Medium 14/20, secondary */
+  .meta {
+    @apply text-sm font-medium leading-5 text-muted;
+  }
+
+  /* Blue text link with optional ↗, Simple/Button */
+  .text-link {
+    @apply font-semibold text-brand underline-offset-4 hover:underline;
   }
 }
 
 @layer utilities {
-  .border-border {
-    border-color: #d0d0d0; /* Example border color */
-  }
-  .bg-background {
-    background-color: #0b0111;
-  }
   .scrollbar-hide {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
-  /* Masonry Grid CSS */
-.masonry-grid {
-  column-count: 1; /* Default to 1 column for small screens */
-  column-gap: 16px; /* Gap between columns */
-}
-
-@media (min-width: 768px) {
-  .masonry-grid {
-    column-count: 2; /* Two columns for medium screens */
+    display: none;
   }
 }
 
-@media (min-width: 1024px) {
-  .masonry-grid {
-    column-count: 3; /* Three columns for large screens */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-}
-
-
-
 }
