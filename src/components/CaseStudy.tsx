@@ -28,19 +28,30 @@ export function CaseStudyTags({ slug }: { slug: string }) {
   );
 }
 
-/** "Next project" link at the bottom of a case study. */
+/**
+ * Footer of a case study: "← Design" on the left, and on the right the
+ * "Next project" label sitting above the link to it.
+ */
 export function CaseStudyNext({ slug }: { slug: string }) {
   const next = getNextDesignProject(slug);
-  if (!next || next.slug === slug) return null;
+  const hasNext = next && next.slug !== slug;
   return (
     <nav
-      aria-label="Next project"
-      className="mt-16 flex flex-col gap-2 border-t border-line pt-8 sm:flex-row sm:items-center sm:justify-between"
+      aria-label="Case study"
+      className="mt-16 flex flex-col gap-8 border-t border-line pt-8 sm:flex-row sm:items-end sm:justify-between"
     >
-      <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-muted">Next project</p>
-      <Link href={`/design/${next.slug}`} className="section-heading underline-offset-4 hover:underline">
-        {next.name} <span aria-hidden="true">→</span>
-      </Link>
+      <CaseStudyBack />
+      {hasNext && (
+        <div className="sm:text-right">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-muted">Next project</p>
+          <Link
+            href={`/design/${next.slug}`}
+            className="section-heading mt-2 inline-block underline-offset-4 hover:underline"
+          >
+            {next.name} <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }

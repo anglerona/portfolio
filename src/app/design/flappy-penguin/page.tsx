@@ -18,7 +18,7 @@ export default function FlappyPenguin() {
   return (
     <div className="relative">
 
-      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+      <main id="main" className="case-study mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
         <CaseStudyBack />
 
         <FadeInSection immediate>
@@ -99,7 +99,7 @@ export default function FlappyPenguin() {
               <SoloImage
                 src={titleScreen}
                 alt="Title screen"
-                heightClassName="max-h-[260px] sm:max-h-[300px]"
+                maxWidthClassName="max-w-[300px]"
                 // openInNewTab
               />
             </div>

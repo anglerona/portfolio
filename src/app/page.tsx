@@ -12,7 +12,7 @@ export default function Home() {
             I write code and design things.
           </p>
         </div>
-        <DuckAvatar className="w-[220px] md:w-[300px] lg:w-[400px]" />
+        <DuckAvatar className="hidden md:block md:w-[300px] lg:w-[400px]" />
       </div>
     </main>
   );

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Miscellaneous",
   description:
-    "Editorial illustration for UW Imprint, plus social media graphics and event posters for the Computer Science Club, Crafts4Charity and MathSoc.",
+    "Social media graphics and event posters for Crafts4Charity, MathSoc and the Computer Science Club.",
 };
 
 export default function MiscellaneousLayout({ children }: { children: React.ReactNode }) {

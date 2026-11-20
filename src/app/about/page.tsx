@@ -53,7 +53,7 @@ export default function About() {
           </li>
         </ul>
       </div>
-      <DuckAvatar className="w-[220px] md:mt-14 md:w-[300px] lg:w-[400px]" />
+      <DuckAvatar className="hidden md:block md:mt-14 md:w-[300px] lg:w-[400px]" />
     </main>
   );
 }

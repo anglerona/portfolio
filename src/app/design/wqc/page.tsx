@@ -100,7 +100,7 @@ export default function WaterlooQuantClub() {
   return (
     <div className="relative">
 
-      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+      <main id="main" className="case-study mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
         <CaseStudyBack />
 
         {/* Header */}
@@ -246,7 +246,7 @@ export default function WaterlooQuantClub() {
 
         {/* BRANDING */}
         <ProjectSection eyebrow="Foundation" title="Brand Identity">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid items-start gap-8 md:grid-cols-2">
             <div>
               <h3 className="text-lg font-bold mb-4">Logo System</h3>
               <p className="text-muted mb-6">
@@ -357,7 +357,7 @@ export default function WaterlooQuantClub() {
                 Welcome Screen & Banner
               </h3>
 
-              <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-center">
+              <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-center">
                 <div>
                   <div className="flex justify-center md:h-[360px]">
                     <Image
@@ -404,7 +404,7 @@ export default function WaterlooQuantClub() {
               <ImageGallery images={fallPosters} />
             </div>
 
-            <div className="grid gap-12 md:grid-cols-2">
+            <div className="grid items-start gap-12 md:grid-cols-2">
               <div>
                 <h3 className="card-title mb-4">
                   Instagram Stories

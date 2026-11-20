@@ -30,10 +30,27 @@
     border: 1px solid theme("colors.line");
   }
 
-  /* No outline on images that sit on a dark panel (it reads as a white frame). */
+  /* Case studies: each image sits on a light grey mat with some breathing room. */
+  .case-study img,
+  .case-study video {
+    background-color: theme("colors.mist");
+    padding: 12px;
+  }
+  @media (min-width: theme("screens.md")) {
+    .case-study img,
+    .case-study video {
+      padding: 20px;
+    }
+  }
+
+  /* No outline or mat on images that sit on a dark panel (they need the dark
+     backdrop to be visible), or in the full-screen image viewer. */
   main .bg-ink img,
-  main .bg-ink video {
+  main .bg-ink video,
+  main [role="dialog"] img {
     border-width: 0;
+    background-color: transparent;
+    padding: 0;
   }
 }
 

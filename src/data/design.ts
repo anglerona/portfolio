@@ -21,6 +21,11 @@ export interface DesignProject {
   tags: DesignTag[];
   /** yyyy-mm-dd; the grid and "Next project" links go newest first. */
   updatedAt: string;
+  /**
+   * Keep the project's page and data, but leave it off the Design page and out
+   * of "Next project" links. Delete this line to bring the project back.
+   */
+  hidden?: boolean;
 }
 
 const PROJECTS: DesignProject[] = [
@@ -91,6 +96,7 @@ const PROJECTS: DesignProject[] = [
     imageWidth: 2560,
     imageHeight: 1676,
     slug: "flappy-penguin",
+    hidden: true,
     tags: ["Illustration", "Game assets"],
     updatedAt: "2024-11-08",
   },
@@ -111,6 +117,7 @@ const PROJECTS: DesignProject[] = [
     imageWidth: 2619,
     imageHeight: 2681,
     slug: "ottersec",
+    hidden: true,
     tags: ["Illustration", "Merch"],
     updatedAt: "2025-08-15",
   },
@@ -158,7 +165,7 @@ const PROJECTS: DesignProject[] = [
   },
   {
     name: "Miscellaneous",
-    description: "Editorial illustration for UW Imprint, plus social media graphics and event posters for the Computer Science Club, Crafts4Charity, and MathSoc.",
+    description: "Social media graphics and event posters for Crafts4Charity, MathSoc, and the Computer Science Club.",
     imageUrl: "/misc-c4c-creators-market-f26.webp",
     imageWidth: 2000,
     imageHeight: 2500,
@@ -168,21 +175,43 @@ const PROJECTS: DesignProject[] = [
     // One day earlier than WQC/Animusic so it sorts just after them.
     updatedAt: "2026-11-05",
   },
+  {
+    name: "UW Imprint",
+    description: "Editorial illustration and page design for UW Imprint, the University of Waterloo's student newspaper.",
+    imageUrl: "/misc-imprint-nov2026-cover.webp",
+    imageWidth: 2009,
+    imageHeight: 2600,
+    coverAlt: "Imprint November 2026 cover: a goose marionette hanging from strings against a glowing purple background",
+    slug: "uw-imprint",
+    tags: ["Illustration"],
+    updatedAt: "2026-11-05",
+  },
 ];
 
-/** All design projects, newest first (ties broken by name). */
-export const DESIGN_PROJECTS: DesignProject[] = [...PROJECTS].sort(
+/** Every project, hidden ones included, newest first (ties broken by name). */
+const ALL_PROJECTS: DesignProject[] = [...PROJECTS].sort(
   (a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.name.localeCompare(b.name),
 );
 
+/** Projects shown on the Design page, newest first. */
+export const DESIGN_PROJECTS: DesignProject[] = ALL_PROJECTS.filter((p) => !p.hidden);
+
+/** Looks up any project, hidden or not (so a hidden project's own page still works). */
 export function getDesignProject(slug: string) {
-  return DESIGN_PROJECTS.find((p) => p.slug === slug);
+  return ALL_PROJECTS.find((p) => p.slug === slug);
 }
 
-/** The project after this one in the grid order (wraps around to the first). */
+/**
+ * The next shown project after this one in the grid order, wrapping around.
+ * Hidden projects are skipped.
+ */
 export function getNextDesignProject(slug: string) {
-  const i = DESIGN_PROJECTS.findIndex((p) => p.slug === slug);
-  return DESIGN_PROJECTS[(i + 1) % DESIGN_PROJECTS.length];
+  const i = ALL_PROJECTS.findIndex((p) => p.slug === slug);
+  for (let step = 1; step <= ALL_PROJECTS.length; step++) {
+    const next = ALL_PROJECTS[(i + step) % ALL_PROJECTS.length];
+    if (!next.hidden) return next;
+  }
+  return undefined;
 }
 
 /**

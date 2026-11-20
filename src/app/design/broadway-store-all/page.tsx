@@ -27,7 +27,7 @@ export default function BroadwayStoreAll() {
   return (
     <div className="relative">
 
-      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+      <main id="main" className="case-study mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
         <CaseStudyBack />
 
         <FadeInSection immediate>
@@ -79,7 +79,7 @@ export default function BroadwayStoreAll() {
         </ProjectSection>
 
         <ProjectSection eyebrow="Final" title="Logo System">
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid items-start gap-8 md:grid-cols-2">
             <div>
               <h3 className="text-lg font-bold mb-5">Primary Mark</h3>
 

@@ -15,7 +15,7 @@ export default function OtterSec() {
   return (
     <div className="relative">
 
-      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+      <main id="main" className="case-study mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
         <CaseStudyBack />
 
         {/* Header */}

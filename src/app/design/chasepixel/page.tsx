@@ -13,7 +13,7 @@ export default function Chasepixel() {
   return (
     <div className="relative">
 
-      <main id="main" className="mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
+      <main id="main" className="case-study mx-auto w-full max-w-[1104px] px-5 pb-24 pt-10 md:px-10 md:pt-12">
         <CaseStudyBack />
 
         <FadeInSection immediate>
@@ -40,7 +40,7 @@ export default function Chasepixel() {
               // openInNewTab
             />
 
-            <div className="mt-8 grid gap-4 md:grid-cols-4">
+            <div className="mt-8 grid items-start gap-4 md:grid-cols-4">
               <div className="md:col-span-2 text-left">
                 <h3 className="text-lg font-bold">Design goals</h3>
                 <ul className="mt-3 text-muted space-y-2 list-disc list-inside">
